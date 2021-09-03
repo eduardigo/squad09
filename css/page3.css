@@ -1,33 +1,53 @@
 div.caixa-login{
     width: 400px;
-    height: 450px;
+    height: 430px;
     border: 3px solid #FE5517;
     border-radius: 10px;
     margin: auto;
 }
 
-div.email-login{
-    width: 250px;
-    height: 50px;
-    border: 1px solid #FE5517;
-    border-radius: 10px;
+.email-login{
     margin-left: 75px;
     margin-top: 50px;
 }
 
-div.senha-login{
+#digitar-email{
     width: 250px;
     height: 50px;
     border: 1px solid #FE5517;
     border-radius: 10px;
+    
+}
+
+.senha-login{
     margin-left: 75px;
     margin-top: 20px;
 }
 
+#digitar-senha{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+
+}
+
+#login{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: #FE662E;
+    color: white;
+    font-size: large;
+}
+
 .cadastre-se{
     text-align: center;
-    margin-bottom: auto;
-
+    margin-top: 20px;
+    color: gray;
 }
 
 .logo-fcamara {
@@ -35,4 +55,12 @@ div.senha-login{
     padding: 10px 0px 0px 40px;
     width: 151px;
     height: 34px;
+}
+
+.email{
+    color: gray;
+}
+
+.senha{
+    color: gray;
 }
