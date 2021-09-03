@@ -57,10 +57,6 @@ div.caixa-login{
     height: 34px;
 }
 
-.email{
-    color: gray;
-}
-
-.senha{
+.login-label{
     color: gray;
 }

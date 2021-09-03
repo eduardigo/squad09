@@ -1,0 +1,79 @@
+.caixa-cadastro{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.nome-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-nome-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.celular-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-celular-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.email-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-email-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.senha-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-senha-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.confirmacao-senha-cadastro{
+    margin-left: 125px;
+}
+
+#confirmar-senha-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.cadastro-label{
+    color: gray;
+}
+
+
+
+
+#cadastrar{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-top: 50px;
+    background-color: #FE662E;
+    color: white;
+    font-size: large;
+}
