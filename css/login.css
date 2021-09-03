@@ -60,3 +60,26 @@ div.caixa-login{
 .login-label{
     color: gray;
 }
+
+nav {
+    position: absolute;
+    top: 1px;
+    right: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin: 0 0 0 0;
+  }
+  
+  nav a {
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: #FE662E;
+  }
