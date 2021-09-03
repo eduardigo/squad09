@@ -31,6 +31,8 @@ div.senha-login{
 }
 
 .logo-fcamara {
+    position: relative;
+    padding: 10px 0px 0px 40px;
     width: 151px;
     height: 34px;
 }
