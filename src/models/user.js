@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require('../database');
+const bcrypt = require('bcryptjs');
 
 //Definição dos campos do banco de dados
 
@@ -23,6 +24,14 @@ const UserSchema = new mongoose.Schema({
         default: Date.now,
     },
 
+});
+
+//criptografar a senha
+UserSchema.pre('save', async function(next){
+    const hash = await bcrypt.hash(this.password, 10);
+    this.password = hash;
+
+    next();
 });
 
 const User = mongoose.model('User',UserSchema);
