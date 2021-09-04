@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-div.caixa-login{
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+div.caixa-login {
     width: 400px;
     height: 430px;
     border: 3px solid #FE5517;
@@ -8,33 +12,31 @@ div.caixa-login{
     margin: auto;
 }
 
-.email-login{
+.email-login {
     margin-left: 75px;
     margin-top: 50px;
 }
 
-#digitar-email{
+#digitar-email {
     width: 250px;
     height: 50px;
     border: 1px solid #FE5517;
     border-radius: 10px;
-    
 }
 
-.senha-login{
+.senha-login {
     margin-left: 75px;
     margin-top: 20px;
 }
 
-#digitar-senha{
+#digitar-senha {
     width: 250px;
     height: 50px;
     border: 1px solid #FE5517;
     border-radius: 10px;
-
 }
 
-#login{
+#login {
     width: 300px;
     height: 50px;
     border: 1px solid #FE5517;
@@ -46,7 +48,7 @@ div.caixa-login{
     font-size: large;
 }
 
-.cadastre-se{
+.cadastre-se {
     text-align: center;
     margin-top: 20px;
     color: gray;
@@ -59,30 +61,41 @@ div.caixa-login{
     height: 34px;
 }
 
-.login-label{
+.login-label {
     color: gray;
 }
 
-nav {    
+nav {
     position: absolute;
     text-align: center;
     top: 1px;
     right: 0;
-  }
-  
-  nav li {
+}
+
+nav li {
     display: inline;
     margin: 0 0 0 0;
     padding-right: 100px;
-  }
-  
-  nav a {
+}
+
+nav a {
     color: #000000;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     text-decoration: none;
-  }
-  
-  nav a:hover {
+}
+
+nav a:hover {
+    transition: 0.3353s;
     color: #FE662E;
-  }
+}
+
+.link-cadastro {
+    text-decoration: none;
+    color: rgb(49, 46, 46);
+}
+
+.link-cadastro:hover {
+    transition: 0.3353s;
+    color: #FE662E;
+}
