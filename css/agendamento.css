@@ -1,21 +1,19 @@
 :root{
-    --cor0: #FC6027;
-    --cor1: #303033;
-    --cor2: #FC4300;
-    --cor3: #333333;
-    --cor4: #EF653C;
-    --cor5: #414099;
-    --cor6: #4b4fa1;
-    --cor7: #090909;
+    --cor0: #FC4300;
+    --cor1: #FC6027;
+    --cor2: #EF653C;
+    --cor3: #090909;
+    --cor4: #303033;
+    --cor5: #333333;   
+    --cor6: #414099;
+    --cor7: #4b4fa1; 
     --cor8: #FFFFFF;
-    
-
 }
 
 body{
-    background-color: rgb(253, 251, 249);
+    background-color: var(--cor8);
 }
 
 .container{
-    background-color: burlywood;
+    background-color: var(--cor0);
 }
