@@ -3,23 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-:root{
-    
-    --cor0: rgb(254, 68, 0); /*Laranja Fcamara*/
-    --cor1: #FC4300;
-    --cor2: #FC6027;
-    --cor3: #EF653C;
-    --cor4: #090909;
-    --cor5: #303033;
-    --cor6: #333333; 
-    --cor7: #333333d3;  
-    --cor8: #36357e; /*Azul Fcamara*/
-    --cor9: #414099;
-    --cor10: #4b4fa1; 
-    --cor11: #FFFFFF;
-}
-
-div.caixa-login{
+div.caixa-login {
     width: 400px;
     height: 430px;
     border: 3px solid #FE5517;
@@ -122,5 +106,3 @@ nav a:hover {
     transition: 0.3353s;
     color: #FE662E;
 }
-
-  
