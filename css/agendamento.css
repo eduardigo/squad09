@@ -1,19 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+}
+
 :root{
-    --cor0: #FC4300;
-    --cor1: #FC6027;
-    --cor2: #EF653C;
-    --cor3: #090909;
-    --cor4: #303033;
-    --cor5: #333333;   
-    --cor6: #414099;
-    --cor7: #4b4fa1; 
-    --cor8: #FFFFFF;
+    
+    --cor0: rgb(254, 68, 0); /*Laranja Fcamara*/
+    --cor1: #FC4300;
+    --cor2: #FC6027;
+    --cor3: #EF653C;
+    --cor4: #090909;
+    --cor5: #303033;
+    --cor6: #333333; 
+    --cor7: #333333d3;  
+    --cor8: #36357e; /*Azul Fcamara*/
+    --cor9: #414099;
+    --cor10: #4b4fa1; 
+    --cor11: #FFFFFF;
 }
 
 body{
-    background-color: var(--cor8);
+    background-color: var(--cor9);
 }
 
-.container{
-    background-color: var(--cor0);
+
+.first{
+    color: var(--cor8);
+    height: 100%;
+    width: 100%;
+    margin: 0;   
 }
+
+.img1{
+    width: 200px;
+    height: 50px;
+    margin: 15px;
+}
+
+.agenda1{
+    text-align: center;
+    background-color: var(--cor2);
+    margin: 0px;
+    padding: 0px;
+}
+
+.text1{
+    color: var(--cor9);
+    
+}
+

@@ -2,6 +2,22 @@
 
 /* font-family: 'Montserrat', sans-serif; */
 
+:root{
+    
+    --cor0: rgb(254, 68, 0); /*Laranja Fcamara*/
+    --cor1: #FC4300;
+    --cor2: #FC6027;
+    --cor3: #EF653C;
+    --cor4: #090909;
+    --cor5: #303033;
+    --cor6: #333333; 
+    --cor7: #333333d3;  
+    --cor8: #36357e; /*Azul Fcamara*/
+    --cor9: #414099;
+    --cor10: #4b4fa1; 
+    --cor11: #FFFFFF;
+}
+
 html, body {
     min-height: 100%;
 }
@@ -9,6 +25,32 @@ html, body {
 body {
     padding: 0;
     margin: 0;
+}
+
+.img1{
+    width: 100px;
+    padding: 10px;
+}
+.navegacao{
+    width: 100%;
+    float: left;
+    background-color: var(--cor11);
+    padding: 18px 8%;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.navegacao li{
+    float: left;
+}
+
+.navegacao li a{
+    color: var(--cor2);
+    margin-right: 25px;
+}
+
+.navegacao li a:hover{
+    color: var(--cor8);
 }
 
 main {
@@ -21,7 +63,7 @@ main {
     width: 100%;
     height: 350px;
     bottom: 0px;
-    background-color: #303033;
+    background-color: var(--cor5);
 }
 
 .footer-logo {
@@ -30,7 +72,7 @@ main {
 }
 
 .texto-rodape1 {
-    color: white;
+    color: var(--cor11);
     font-weight: bold;
     text-align: center;
     font-size: 35px;
@@ -43,7 +85,7 @@ main {
 }
 
 .textohistoria {
-    color: orangered;
+    color: var(--cor1);
 }
 
 .contato, .contato:visited {
@@ -52,14 +94,14 @@ main {
     margin-top: 30px;
     margin-left: 30px;
     text-decoration: none;
-    color: whitesmoke;
+    color: var(--cor11);
     font-size: 22px;
     transition: 0.5s color;
     text-align: right;
 }
 
 .contato:hover {
-    color: #FE662E;
+    color: var(--cor2);
 }
 
 .copyright {
@@ -67,4 +109,8 @@ main {
     position: relative;
     /* margin-top: 200px; */
     text-align: center;
+}
+
+.copyright{
+    color: var(--cor11);
 }
