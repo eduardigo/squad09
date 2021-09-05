@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -10,6 +9,7 @@ div.caixa-login {
     border: 3px solid #FE5517;
     border-radius: 10px;
     margin: auto;
+    margin-top: 150px;
 }
 
 .email-login {
@@ -50,7 +50,13 @@ div.caixa-login {
 
 .cadastre-se {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    color: gray;
+}
+
+.esqueci-senha {
+    text-align: center;
+    margin-top: 10px;
     color: gray;
 }
 
