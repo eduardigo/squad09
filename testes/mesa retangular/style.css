@@ -3,7 +3,7 @@
     margin: 120px auto;
     border: 2px solid #000000;
     border-radius: 5%;
-    width: 250px;
+    width: 350px;
     height: 150px;
     background-image: url(mesa.png);
     background-position: center;
@@ -11,7 +11,7 @@
 
 .square {
     position: absolute;
-    left: 36px;
+    left: 29px;
     top: -40px;
     height: 35px;
     width: 35px;
@@ -39,23 +39,42 @@
 } */
 
 .square:nth-child(2) {
-    left: 108px;
+    left: 93px;
 }
 
 .square:nth-child(3) {
-    left: 180px;
+    left: 157px;
 }
 
 .square:nth-child(4) {
-    top: 150px;
+    left: 221px;
 }
 
 .square:nth-child(5) {
-    top: 150px;
-    left: 108px;
+    left: 285px;
 }
 
 .square:nth-child(6) {
     top: 150px;
-    left: 180px;
+    left: 29px;
+}
+
+.square:nth-child(7) {
+    top: 150px;
+    left: 93px;
+}
+
+.square:nth-child(8) {
+    top: 150px;
+    left: 157px;
+}
+
+.square:nth-child(9) {
+    top: 150px;
+    left: 221px;
+}
+
+.square:nth-child(10) {
+    top: 150px;
+    left: 285px;
 }
