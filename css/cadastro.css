@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo-fcamara {
+    position: relative;
+    padding: 10px 0px 0px 40px;
+    width: 151px;
+    height: 34px;
+}
+
+
+.caixa-cadastro{
+    width: 500px;
+    height: 575px;
+    margin: auto;
+    margin-top: 150px;
+    border: 3px solid #FE5517;
+    border-radius: 10px;
+}
+
+.nome-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-nome-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.celular-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-celular-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.email-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-email-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.senha-cadastro{
+    margin-left: 125px;
+}
+
+#digitar-senha-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.confirmacao-senha-cadastro{
+    margin-left: 125px;
+}
+
+#confirmar-senha-cadastro{
+    width: 250px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+.cadastro-label{
+    color: gray;
+}
+
+.nome-cadastro, .celular-cadastro, .email-cadastro, .senha-cadastro, .confirmacao-senha-cadastro {
+    margin-top: 25px;
+}
+
+
+#cadastrar{
+    width: 300px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-top: 25px;
+    background-color: #FE662E;
+    color: white;
+    font-size: large;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+.opcoes {
+    margin-top: 12px;
+    text-align: center;
+}
+
+nav {
+    position: absolute;
+    text-align: center;
+    top: 1px;
+    right: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 0;
+    padding-right: 100px;
+}
+
+nav a {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    transition: 0.3353s;
+    color: #FE662E;
+}
+
+.link-cadastro {
+    text-decoration: none;
+    color: rgb(49, 46, 46);
+}
+
+.link-cadastro:hover {
+    transition: 0.3353s;
+    color: #FE662E;
+}

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.caixa-login {
+    position: relative;
+    width: 400px;
+    height: 430px;
+    border: 3px solid #FE5517;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.apoio-esqueci-senha {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.alinhamento-texto2 {
+    color: #c7765a;
+    font-style: italic;
+}
+
+.email-login {
+    margin-left: 75px;
+    margin-top: 60px;
+}
+
+#email-cadastrado {
+    margin-top: 10px;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #FE5517;
+    border-radius: 10px;
+}
+
+#login {
+    cursor: pointer;
+    width: 300px;
+    height: 50px;
+    border: 1px solid #FE5517;
+    border-radius: 20px;
+    margin-top: 75px;
+    margin-left: 50px;
+    background-color: #FE662E;
+    color: white;
+    font-size: large;
+}
+
+
+.cadastre-se {
+    text-align: center;
+    margin-top: 30px;
+    color: gray;
+}
+
+.esqueci-senha {
+    text-align: center;
+    margin-top: 10px;
+    color: gray;
+}
+
+.logo-fcamara {
+    position: relative;
+    padding: 10px 0px 0px 40px;
+    width: 151px;
+    height: 34px;
+}
+
+.login-label {
+    color: gray;
+}
+
+nav {
+    position: absolute;
+    text-align: center;
+    top: 1px;
+    right: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 0 0 0;
+    padding-right: 100px;
+}
+
+nav a {
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    transition: 0.3353s;
+    color: #FE662E;
+}
