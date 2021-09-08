@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
+const transport = require('../modules/mailer');
 
 const authConfig = require('../config/auth');
 const User = require('../models/user');
@@ -88,7 +89,7 @@ router.post('/esqueceu_senha', async (req, res) => {
             from: "Squad09 <edubraga55@hotmail.com>",
             to: email,
             subject: "Siga os passos abaixo para redefinir sua senha",
-            text: "TEXTO A SER ELABORADO",
+            text: "TEXTO A SER ELABORADO" + token,
             context: { token },
         }, (err) => {
             console.log(err);
