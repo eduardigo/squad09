@@ -33,7 +33,7 @@ app.get('/agendamento', async (req, res) => {
 });
 
 //Rota para selecionar o lugar (deixar ocupado)
-app.put('/agendamento/:id', (req, res) =>{
+app.put('/agendamento/:id', (req, res) => {
 
 });
 
