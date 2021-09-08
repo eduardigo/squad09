@@ -9,9 +9,10 @@ app.use(express.json());
 
 
 require('./controllers/index')(app);
+//require('./controllers/authController')(app);
 
 
-mongoose.connect("mongodb://localhost/noderest", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost:27017/cadastro", {useNewUrlParser: true, useUnifiedTopology: true});
 
 
 //Rota da criação dos lugares disponíveis

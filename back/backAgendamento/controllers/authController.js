@@ -61,7 +61,7 @@ router.post('/autenticacao', async (req, res) => {
 
 });
 
-// Rota para caso o usuário esqueça a senha
+// Rota para caso o usuário esqueça a senha (ainda tem algum problema nessa rota e no envio do e-mail)
 router.post('/esqueceu_senha', async (req, res) => {
     const { email } = req.body;
 
