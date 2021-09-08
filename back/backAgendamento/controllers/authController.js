@@ -3,9 +3,10 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
+const mongoose = require('mongoose');
 
 const authConfig = require('../config/auth');
-const User = require('../models/User');
+const User = require('../models/user');
 const router = express.Router();
 
 // Geração do token para autenticação
@@ -14,7 +15,6 @@ function generateToken(params = {}) {
         expiresIn: 86400,
     });
 }
-
 
 // Rota de registro
 router.post('/registro', async (req, res) => {
@@ -82,20 +82,14 @@ router.post('/esqueceu_senha', async (req, res) => {
                 passwordResetExpires: now,
             }
         });
-
-        const { host, port, User, pass } = require('../config/mail.json');
-
-        const transport = nodemailer.createTransport({
-            host,
-            port,
-            auth: { User, pass },
-          });
+                
 
         transport.sendMail({
             from: "Squad09 <edubraga55@hotmail.com>",
             to: email,
             subject: "Siga os passos abaixo para redefinir sua senha",
-            text: "TEXTO A SER ELABORADO" {token},
+            text: "TEXTO A SER ELABORADO",
+            context: { token },
         }, (err) => {
             console.log(err);
             if (err)

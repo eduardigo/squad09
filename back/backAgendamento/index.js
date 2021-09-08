@@ -7,7 +7,12 @@ const cadastroLugar = require('./services/CadastroLugar');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/Squad09", {useNewUrlParser: true, useUnifiedTopology: true});
+
+require('./controllers/index')(app);
+
+
+mongoose.connect("mongodb://localhost/noderest", {useNewUrlParser: true, useUnifiedTopology: true});
+
 
 //Rota da criação dos lugares disponíveis
 app.post('/cadastroPostoDeTrabalho', async (req, res) => {
