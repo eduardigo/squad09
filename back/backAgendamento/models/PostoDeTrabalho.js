@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+//Definição dos campos do banco de dados
 const postoDeTrabalho = new mongoose.Schema({
     unidade: {
         type: String,

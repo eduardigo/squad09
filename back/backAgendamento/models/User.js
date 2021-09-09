@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-
 //Definição dos campos do banco de dados de cadastro de usuário
 const UserSchema = new mongoose.Schema({
     name: {

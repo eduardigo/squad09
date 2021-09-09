@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const authConfig = require('../config/auth.json');
 
+//Cria um caminho para verificação de token obrigatória
 module.exports = (req, res, next) => {
     const authHeader = req.headers.authorization;
 

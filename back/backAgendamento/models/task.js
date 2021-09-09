@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 
 //Definição dos campos do banco de dados
 const TaskSchema = new mongoose.Schema({

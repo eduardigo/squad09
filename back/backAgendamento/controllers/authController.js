@@ -2,8 +2,6 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
-const nodemailer = require('nodemailer');
-const mongoose = require('mongoose');
 const transport = require('../modules/mailer');
 
 const authConfig = require('../config/auth');
@@ -38,7 +36,7 @@ router.post('/registro', async (req, res) => {
     }
 });
 
-//Rota de autenticação
+//Rota de autenticação/login
 router.post('/autenticacao', async (req, res) => {
     const { email, password } = req.body;
 
