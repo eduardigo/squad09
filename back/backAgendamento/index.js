@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cadastroLugar = require('./services/CadastroLugar');
 
@@ -44,8 +43,8 @@ app.put('/agendamento/:id', (req, res) => {
 });
 
 //Rota para realizar o agendamento
-app.post('', async (req, res) => {
+//app.post('', async (req, res) => {
 
-});
+//});
 
 app.listen(3000, () => {});
