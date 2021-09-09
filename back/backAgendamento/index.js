@@ -12,6 +12,7 @@ require('./controllers/index')(app);
 
 
 mongoose.connect("mongodb://localhost:27017/cadastro", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.Promise = global.Promise;
 
 
 //Rota da criação dos lugares disponíveis
@@ -27,7 +28,7 @@ app.post('/cadastroPostoDeTrabalho', async (req, res) => {
         res.send("Criado com sucesso!");
     }else{
         console.log(status);
-        res.send("Ocorreu uma falha");
+        res.send("Ocorreu uma falha na criação");
     }
 });
 

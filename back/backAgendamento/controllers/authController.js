@@ -10,14 +10,14 @@ const authConfig = require('../config/auth');
 const User = require('../models/user');
 const router = express.Router();
 
-// Geração do token para autenticação
+//Geração do token para autenticação
 function generateToken(params = {}) {
     return jwt.sign(params, authConfig.secret, {
-        expiresIn: 86400,
+        expiresIn: 86400, //Expira em 86400 segundos = 1 dia
     });
 }
 
-// Rota de registro
+//Rota de registro de usuário
 router.post('/registro', async (req, res) => {
     const { email } = req.body;
 
@@ -27,7 +27,7 @@ router.post('/registro', async (req, res) => {
 
         const user = await User.create(req.body);
 
-        user.password = undefined;
+        user.password = undefined; //Impede que a senha seja exibida
 
         return res.send({ 
             user,
@@ -38,7 +38,7 @@ router.post('/registro', async (req, res) => {
     }
 });
 
-// Rota de autenticação
+//Rota de autenticação
 router.post('/autenticacao', async (req, res) => {
     const { email, password } = req.body;
 
@@ -47,7 +47,7 @@ router.post('/autenticacao', async (req, res) => {
     if (!user)
         return res.status(400).send({ error: 'Usuário não encontrado' });
 
-    // Comparar se a senha inserida é diferente da cadastrada no banco
+    //Comparar se a senha inserida é diferente da cadastrada no banco
     if (!await bcrypt.compare(password, user.password))
         return res.status(400).send({ error: 'Senha inválida' });
 
@@ -62,7 +62,7 @@ router.post('/autenticacao', async (req, res) => {
 
 });
 
-// Rota para caso o usuário esqueça a senha (ainda tem algum problema nessa rota e no envio do e-mail)
+//Rota para caso o usuário esqueça a senha
 router.post('/esqueceu_senha', async (req, res) => {
     const { email } = req.body;
 
@@ -84,9 +84,9 @@ router.post('/esqueceu_senha', async (req, res) => {
             }
         });
                 
-
+        //Enviar e-mail de recuperação de senha
         transport.sendMail({
-            from: "Squad09 <edubraga55@hotmail.com>",
+            from: "Squad09 <squad09@hotmail.com>",
             to: email,
             subject: "Siga os passos abaixo para redefinir sua senha",
             text: "TEXTO A SER ELABORADO" + token,
@@ -103,7 +103,7 @@ router.post('/esqueceu_senha', async (req, res) => {
     }
 });
 
-// Rota de recuperação de senha
+//Rota de recuperação de senha
 router.post('/recuperar_senha', async (req, res) => {
     const { email, token, password } = req.body;
 

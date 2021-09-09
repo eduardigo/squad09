@@ -1,3 +1,5 @@
+//CRUD
+
 const express = require('express');
 const authMiddleware = require('../middlewares/auth');
 
@@ -8,6 +10,7 @@ const router = express.Router();
 
 router.use(authMiddleware);
 
+//Rota para listar os projetos
 router.get('/', async (req, res) => {
     try {
         const projects = await Project.find().populate(['user', 'tasks']);
@@ -18,6 +21,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+//Rota para exibir um projeto
 router.get('/:projectId', async (req, res) => {
     try {
         const project = await Project.findById(req.params.projectId).populate(['user', 'tasks']);
@@ -28,6 +32,7 @@ router.get('/:projectId', async (req, res) => {
     }
 });
 
+//Rota de criação de projeto
 router.post('/', async (req, res) => {
     try {
         const { title, description, tasks } = req.body;
@@ -51,6 +56,7 @@ router.post('/', async (req, res) => {
     }
 });
 
+//Rota de atualização de projeto
 router.put('/:projectId', async (req, res) => {
     try {
         const { title, description, tasks } = req.body;
@@ -80,6 +86,7 @@ router.put('/:projectId', async (req, res) => {
     }
 });
 
+//Rote de exclusão de projeto
 router.delete('/:projectId', async (req, res) => {
     try {
         await Project.findByIdAndRemove(req.params.projectId);

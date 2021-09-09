@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 
-// Definição dos campos do banco de dados de cadastro de usuário
+//Definição dos campos do banco de dados de cadastro de usuário
 const UserSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -31,10 +31,9 @@ const UserSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-
 });
 
-// Criptografar a senha
+//Encriptar a senha
 UserSchema.pre('save', async function(next) {
     const hash = await bcrypt.hash(this.password, 10);
     this.password = hash;
