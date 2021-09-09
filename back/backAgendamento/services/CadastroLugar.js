@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 const lugar = mongoose.model('PostoDeTrabalho', postoDeTrabalho);
 
-//função para criar um novo lugar
+//Criação de um novo lugar
 class CadastroLugar {
     async Create(unidade, sala, numero, disponivel) {
         var newLugar = new lugar({
@@ -22,7 +22,7 @@ class CadastroLugar {
         }
     }
 
-    //função para exibir os lugares disponíveis
+    //Função para exibir os lugares disponíveis
     async GetAll(showDisponivel){
         if(showDisponivel){
             return await lugar.find();

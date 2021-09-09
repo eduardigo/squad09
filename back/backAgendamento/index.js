@@ -42,4 +42,9 @@ app.put('/agendamento/:id', (req, res) => {
 
 });
 
+//Rota para realizar o agendamento
+app.post('', async (req, res) => {
+
+});
+
 app.listen(3000, () => {});
