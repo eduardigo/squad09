@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
+//Função para conferir se o email digitado é válido
+var validateEmail = function(email) {
+    var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    return re.test(email)
+};
+
 //Definição dos campos do banco de dados de cadastro de usuário
 const UserSchema = new mongoose.Schema({
     name: {
@@ -12,6 +18,8 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         required: true,
         lowercase: true,
+        validate: [validateEmail, "Falha ao realizar o cadastro"],
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, "Falha ao realizar o cadastro"]
     },
     password: {
         type: String,
