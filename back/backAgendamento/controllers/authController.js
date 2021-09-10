@@ -22,18 +22,19 @@ router.post('/registro', async (req, res) => {
     try {
         if(await User.findOne({ email }))
             return res.status(400).send({ error: 'Usuário já cadastrado' });
+      
+            const user = await User.create(req.body);
 
-        const user = await User.create(req.body);
+            user.password = undefined; //Impede que a senha seja exibida           
+//            user.passwordConfirmation;
 
-        user.password = undefined; //Impede que a senha seja exibida
-
-        return res.send({ 
-            user,
-            token: generateToken({ id: user.id }),
+            return res.send({ 
+                user,
+                token: generateToken({ id: user.id }),        
         });
     } catch (err) {
         return res.status(400).send({ error: 'Falha ao realizar o cadastro' });
-    }
+    } 
 });
 
 //Rota de autenticação/login
