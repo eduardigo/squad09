@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const cadastroLugar = require('./services/CadastroLugar');
 const cadastroAgendamento = require('./services/CadastroAgendamento');
+const login = require('./middlewares/auth');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -16,7 +17,7 @@ mongoose.Promise = global.Promise;
 
 
 //Rota da criação dos lugares disponíveis
-app.post('/cadastroPostoDeTrabalho', async (req, res) => {
+app.post('/cadastroPostoDeTrabalho', login, async (req, res) => {
     var status = await cadastroLugar.Create(
         req.body.unidade,
         req.body.sala,
@@ -33,13 +34,13 @@ app.post('/cadastroPostoDeTrabalho', async (req, res) => {
 });
 
 //Rota para exibir lugares disponíveis
-app.get('/agendamento', async (req, res) => {
+app.get('/agendamento', login, async (req, res) => {
     var lugares = await cadastroLugar.GetAll(false);
     res.json(lugares);
 });
 
 //Rota para selecionar o lugar (deixar ocupado)
-app.put('/agendamento/:id', async (req, res) => {
+app.put('/agendamento/:id', login, async (req, res) => {
     var id = req.params;
     var ocupado = req.body;
 
@@ -47,7 +48,7 @@ app.put('/agendamento/:id', async (req, res) => {
 });
 
 //Rota do agendamento
-app.post('/agendamento', async (req, res) =>{
+app.post('/agendamento', login, async (req, res) =>{
     var agend = await cadastroAgendamento.Create(
         req.body.nome,
         req.body.email,
