@@ -9,7 +9,7 @@ class CadastroLugar {
         var newLugar = new lugar({
             unidade: unidade,
             sala: sala,
-            numero: numero, //Temos que ver um melhor jeito para um código de cadastro, pois ele dá falha quando tento cadastrar o mesmo número mas em salas diferentes
+            numero: numero,
             disponivel: disponivel,
         });
 

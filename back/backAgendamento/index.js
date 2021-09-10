@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cadastroLugar = require('./services/CadastroLugar');
+const cadastroAgendamento = require('./services/CadastroAgendamento');
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -24,10 +25,10 @@ app.post('/cadastroPostoDeTrabalho', async (req, res) => {
     )
 
     if(status){
-        res.send("Criado com sucesso!");
+        res.json("Criado com sucesso!");
     }else{
         console.log(status);
-        res.send("Ocorreu uma falha na criação");
+        res.json("Ocorreu uma falha na criação");
     }
 });
 
@@ -38,13 +39,32 @@ app.get('/agendamento', async (req, res) => {
 });
 
 //Rota para selecionar o lugar (deixar ocupado)
-app.put('/agendamento/:id', (req, res) => {
+app.put('/agendamento/:id', async (req, res) => {
+    var id = req.params;
+    var ocupado = req.body;
 
+    
 });
 
-//Rota para realizar o agendamento
-//app.post('', async (req, res) => {
+//Rota do agendamento
+app.post('/agendamento', async (req, res) =>{
+    var agend = await cadastroAgendamento.Create(
+        req.body.nome,
+        req.body.email,
+        req.body.unidade,
+        req.body.data,
+        req.body.lugar,
+    )
 
-//});
+    if(agend){
+        res.json("Criado com sucesso!");
+    }else{
+        console.log(agend);
+        res.json("Ocorreu uma falha na criação");
+    }
+});
+
+
+
 
 app.listen(3000, () => {});

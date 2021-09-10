@@ -13,7 +13,6 @@ const postoDeTrabalho = new mongoose.Schema({
     numero: {
         type: Number,
         required: true,
-        unique: true,
     },
     disponivel: Boolean,
 });

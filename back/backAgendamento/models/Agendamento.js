@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 //Definição dos campos do banco de dados
 const agendamento = new mongoose.Schema({
-    name: {
+    nome: {
         type: String,
         required: true,
     },
@@ -10,8 +10,20 @@ const agendamento = new mongoose.Schema({
         type: String,
         required: true,
     },
-    description: String,
-    date: Date,
+    unidade: {
+        type: String,
+        required: true,
+    },
+    data: {
+        type: Date,
+        required: true,
+    },
+    lugar: {
+        //type: mongoose.Schema.Types.ObjectId,
+        //ref:"PostoDeTrabalho",
+        type: Number,
+        required: true,
+    },
 });
 
 module.exports = agendamento;
