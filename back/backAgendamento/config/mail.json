@@ -1,6 +1,6 @@
 {
-    "host": "smtp.mailtrap.io",
-    "port": "2525",
-    "user": "bd1142b7310ecb",
-    "pass": "2da1c105f82e18"
+    "host": "smtp-mail.outlook.com",
+    "port": "587",
+    "user": "squad09hackathon@outlook.com",
+    "pass": "Squad092021"
 }

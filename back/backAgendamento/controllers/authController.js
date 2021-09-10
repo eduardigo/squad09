@@ -84,7 +84,7 @@ router.post('/esqueceu_senha', async (req, res) => {
                 
         //Enviar e-mail de recuperação de senha
         transport.sendMail({
-            from: "Squad09 <squad09@hotmail.com>",
+            from: "Squad09 <squad09hackathon@outlook.com>",
             to: email,
             subject: "Siga os passos abaixo para redefinir sua senha",
             text: "TEXTO A SER ELABORADO" + token,
