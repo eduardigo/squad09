@@ -1,11 +1,18 @@
-
+const loginForm = document.getElementById('login-formulario');
 const email = document.getElementById('digitar-email');
 const password = document.getElementById('digitar-senha');
 
 
-myForm.addEventListener('submit', function (e) {
 
+// ação disparada ao apertar o botão de login 
+loginForm.addEventListener('submit', function (e) {
+
+    //impede a página de apagar os valores do form/recarregar a página
     e.preventDefault();
+
+// teste para saber se o e-mail e a senha estão passando
+    console.log(email.value);
+    console.log(password.value);
 
     const data = { email: email.value, password: password.value };
 
