@@ -1,6 +1,6 @@
-var agendamento = require('../models/Agendamento');
+var agendamento = require('../models/agendamento');
 var mongoose = require('mongoose');
-const postoDeTrabalho = require('../models/PostoDeTrabalho');
+const postoDeTrabalho = require('../models/posto');
 
 const agendar = mongoose.model('Agendamento', agendamento);
 
