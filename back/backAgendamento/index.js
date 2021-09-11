@@ -1,8 +1,6 @@
 const express = require('express');
 const app = express();
-const cadastroAgendamento = require('./services/CadastroAgendamento');
 const login = require('./middlewares/auth');
-const agendamento = require('./models/agendamento');
 const cors = require('cors');
 require('./database');
 
@@ -17,27 +15,7 @@ require('./controllers/index')(app);
 
 app.use('/unidade', require('./routes/unidade.routes'));
 app.use('/posto', require('./routes/posto.routes'));
-
-
-
-//Rota do agendamento
-app.post('/agendamento', async (req, res) =>{
-    var agend = await cadastroAgendamento.Create(
-        req.body.nome,
-        req.body.email,
-        req.body.unidade,
-        req.body.data,
-        req.body.lugar,
-    )
-
-    if(agend){
-        res.json("Criado com sucesso!");
-    }else{
-        console.log(agend);
-        res.json("Ocorreu uma falha na criação");
-    }
-});
-
+app.use('/agendamento', require('./routes/agendamento.routes'));
 
 
 //Essas rotas abaixo ainda não funcionam completamente, estou com algumas dificuldades, mas essas seriam as bases de cada uma e
@@ -45,7 +23,7 @@ app.post('/agendamento', async (req, res) =>{
 
 
 //Rota para listar agendamentos
-  app.get('/agendamento', async (req, res) => {
+  /* app.get('/agendamento', async (req, res) => {
     try {
         const listar = await agendamento.find({});
 
@@ -53,10 +31,10 @@ app.post('/agendamento', async (req, res) =>{
     } catch (err) {
         return res.status(400).send({ error: 'Erro ao listar agendamentos' });
     }
-});
+}); */
 
 //Rota para buscar agendamento pelo id
-app.get('/agendamento/:id', async (req, res) => {
+/* app.get('/agendamento/:id', async (req, res) => {
     try {
         const agendamentoId = await agendamento.findById(req.params.id);
 
@@ -64,10 +42,10 @@ app.get('/agendamento/:id', async (req, res) => {
     } catch (err) {
         return res.status(400).send({ error: 'Erro ao buscar agendamento' });
     }
-});
+}); */
 
 //Rota para buscar agendamento pelo id e deletar
-app.delete('/agendamento/:id', async (req, res) => {
+/* app.delete('/agendamento/:id', async (req, res) => {
     try {
         const agendamentoId = await agendamento.findByIdAndDelete(req.params.id);
 
@@ -75,10 +53,10 @@ app.delete('/agendamento/:id', async (req, res) => {
     } catch (err) {
         return res.status(400).send({ error: 'Erro ao excluir agendamento' });
     }
-});
+}); */
 
 //Rota para atualizar agendamento(reagendar)
-app.put('/agendamento/:id', async (req, res) => {
+/* app.put('/agendamento/:id', async (req, res) => {
     try {
         const agendamentoId = await agendamento.findByIdAndUpdate(req.params.id);
 
@@ -86,7 +64,7 @@ app.put('/agendamento/:id', async (req, res) => {
     } catch (err) {
         return res.status(400).send({ error: 'Erro ao atualizar agendamento' });
     }
-});
+}); */
 
 
 app.listen(3000, () => {});
