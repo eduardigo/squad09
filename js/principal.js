@@ -24,6 +24,7 @@ loginForm.addEventListener('submit', function (e) {
         return response.json();
 
     }).then(function (data) {
+        // passando o token do usuário para a localStorage (para uma possível funcionalidade futura)
      localStorage.setItem("token",data.token)
     }).catch(function (error) {
         console.log(error);
