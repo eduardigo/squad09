@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const cadastroLugar = require('./services/CadastroLugar');
 const cadastroAgendamento = require('./services/CadastroAgendamento');
 const login = require('./middlewares/auth');
-
+const cors = require('cors');
+app.use(cors({origin: "*",}));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
