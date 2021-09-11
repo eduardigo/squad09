@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/cadastro.css">
-  </head>
-  <body>
-    <img class="logo-fcamara" src="imagens/logo-fcamara.png"/>
-    
-    <header>
-      <div class="navegacao">
 
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="contato.html">Contato</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <div class="caixa-cadastro">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/cadastro.css">
+</head>
 
+<body>
+  <img class="logo-fcamara" src="imagens/logo-fcamara.png" />
+
+  <header>
+    <div class="navegacao">
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="caixa-cadastro">
+
+    <form id="cadastro-formulario">
       <div class="nome-cadastro">
         <label for="digitar-nome-cadastro" class="cadastro-label">Nome:</label>
         <div>
@@ -49,26 +52,29 @@
       <div class="senha-cadastro">
         <label for="digitar-senha-cadastro" class="cadastro-label">Senha:</label>
         <div>
-          <input type="text" name="digitarSenhaCadastro" id="digitar-senha-cadastro" placeholder="Digite sua senha">
+          <input type="password" name="digitarSenhaCadastro" id="digitar-senha-cadastro" placeholder="Digite sua senha">
         </div>
       </div>
 
       <div class="confirmacao-senha-cadastro">
         <label for="confirmar-senha-cadastro" class="cadastro-label">Confirmação de senha:</label>
         <div>
-          <input type="text" name="confirmarSenhaCadastro" id="confirmar-senha-cadastro" placeholder="Digite novamente sua senha">
+          <input type="password" name="confirmarSenhaCadastro" id="confirmar-senha-cadastro"
+            placeholder="Digite novamente sua senha">
         </div>
       </div>
 
 
       <button id="cadastrar" class="botao-cadastrar">Cadastrar</button>
-    </div>
-
-    
-
+  </div>
+  </form>
 
 
 
-  </body>
-  <script src="js/principal.js"></script>
+
+
+
+</body>
+<script src="js/cadastro.js"></script>
+
 </html>

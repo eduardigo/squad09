@@ -44,11 +44,11 @@ router.post('/autenticacao', async (req, res) => {
     const user = await User.findOne({ email }).select('+password');
 
     if (!user)
-        return res.status(400).send({ error: 'Usuário não encontrado' });
+        return res.status(404).send({ error: 'Usuário não encontrado' });
 
     //Comparar se a senha inserida é diferente da cadastrada no banco
     if (!await bcrypt.compare(password, user.password))
-        return res.status(400).send({ error: 'Senha inválida' });
+        return res.status(401).send({ error: 'Senha inválida' });
 
 
     user.password = undefined;
