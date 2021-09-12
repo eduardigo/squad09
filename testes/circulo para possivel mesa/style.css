@@ -1,0 +1,83 @@
+.main {
+    position: relative;
+    margin: 120px auto;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+        /* background-image: url(mesa.png);
+        background-position: center; */
+}
+
+.circle {
+    position: absolute;
+    left: calc(50% - 25px);
+    top: calc(50% - 25px);
+    height: 50px;
+    width: 50px;
+    border: 2px solid #000000;
+    border-radius: 50%;
+}
+
+.circle.occupied {
+    background-color: brown;
+    background-image: url(xis.png);
+    background-size: cover;
+}
+
+
+.circle:not(.occupied):hover {
+    cursor: pointer;
+    height: 55px;
+    width: 55px;
+    /* transform: scale(1.1); */
+}
+
+
+
+
+.circle.selected {
+    background-color: #f58b00fa;
+}
+
+
+
+.circle:nth-child(1) {
+    transform: translateX(175px);
+}
+
+.circle:nth-child(2) {
+    transform: rotate(36deg) translateX(175px);
+}
+
+.circle:nth-child(3) {
+    transform: rotate(72deg) translateX(176px);
+}
+
+.circle:nth-child(4) {
+    transform: rotate(108deg) translateX(178px);
+}
+
+.circle:nth-child(5) {
+    transform: rotate(144deg) translateX(179px);
+}
+
+.circle:nth-child(6) {
+    transform: rotate(180deg) translateX(179px);
+}
+
+.circle:nth-child(7) {
+    transform: rotate(216deg) translateX(179px);
+}
+
+.circle:nth-child(8) {
+    transform: rotate(252deg) translateX(179px);
+}
+
+.circle:nth-child(9) {
+    transform: rotate(288deg) translateX(179px);
+}
+
+.circle:nth-child(10) {
+    transform: rotate(324deg) translateX(179px);
+}

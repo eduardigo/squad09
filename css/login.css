@@ -19,7 +19,7 @@ body {
     --cor11: #FFFFFF;
 }
 
-div.caixa-login{
+div.caixa-login {
     width: 400px;
     height: 430px;
     border: 3px solid #FE5517;
@@ -122,5 +122,3 @@ nav a:hover {
     transition: 0.3353s;
     color: #FE662E;
 }
-
-  

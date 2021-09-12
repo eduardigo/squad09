@@ -1,0 +1,80 @@
+.rectangle {
+    position: relative;
+    margin: 120px auto;
+    border: 2px solid #000000;
+    border-radius: 5%;
+    width: 350px;
+    height: 150px;
+    background-image: url(mesa.png);
+    background-position: center;
+}
+
+.square {
+    position: absolute;
+    left: 29px;
+    top: -40px;
+    height: 35px;
+    width: 35px;
+    border: 2px solid #000000;
+    border-radius: 10%;
+}
+
+.square.selected {
+    background-color: #f58b00fa;
+}
+
+.square.occupied {
+    background-color: brown;
+    background-image: url(xis.png);
+    background-size: cover;
+}
+
+.square:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* .square:nth-child(1):active {
+    background-color: black;
+} */
+
+.square:nth-child(2) {
+    left: 93px;
+}
+
+.square:nth-child(3) {
+    left: 157px;
+}
+
+.square:nth-child(4) {
+    left: 221px;
+}
+
+.square:nth-child(5) {
+    left: 285px;
+}
+
+.square:nth-child(6) {
+    top: 150px;
+    left: 29px;
+}
+
+.square:nth-child(7) {
+    top: 150px;
+    left: 93px;
+}
+
+.square:nth-child(8) {
+    top: 150px;
+    left: 157px;
+}
+
+.square:nth-child(9) {
+    top: 150px;
+    left: 221px;
+}
+
+.square:nth-child(10) {
+    top: 150px;
+    left: 285px;
+}
