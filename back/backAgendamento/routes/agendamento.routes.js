@@ -4,11 +4,38 @@ const Unidade = require('../models/unidade');
 const Posto = require('../models/posto');
 const Agendamento = require('../models/agendamento');
 
-//Rota para criar um agendamento. Precisamos ver como bloquear o agendamento para mesma data e posto de trabalho
+
+//Rota para criar um agendamento
 router.post('/', async (req, res) => {
     try {
+        //Verificar se já existe este agendamento
+        const { unidadeId, postoId, data } = req.body;
+        const existeAgendamento = await Agendamento.findOne({
+            unidadeId,
+            postoId,
+            data,
+        });
+        if (existeAgendamento) {
+            res.json({ message: 'Agendamento já existe!' })
+        } else {
         const agendamento = await new Agendamento(req.body).save();
         res.json({ agendamento });
+        }
+    } catch (err) {
+        res.json({ error: true, message: err.message});
+    }
+});
+
+//Rota para listar todos os agendamentos
+router.get('/', async (req, res) => {
+    try {
+        const listarAgendamentos = await Agendamento.find().select('_id usuarioId unidadeId postoId data');
+        console.log(listarAgendamentos);
+
+        res.json({
+            listarAgendamentos: listarAgendamentos.map(s => ({ usuario: s.usuarioId, unidade: s.unidadeId, posto: s.postoId, data: s.data, value: s._id })),
+        });
+
     } catch (err) {
         res.json({ error: true, message: err.message});
     }
@@ -21,6 +48,7 @@ router.get('/:usuarioId', async (req, res) => {
         const listarAgendamentos = await Agendamento.find({
             usuarioId,
         }).select('_id unidadeId postoId data');
+        console.log(listarAgendamentos);
 
         res.json({
             listarAgendamentos: listarAgendamentos.map(s => ({ unidade: s.unidadeId, posto: s.postoId, data: s.data, value: s._id })),
@@ -61,3 +89,33 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+/* TESTE DE MOSTRAR POR DATA E POR UNIDADE
+
+router.get('/:unidadeId', async (req, res) => {
+    try {
+        const { unidadeId } = req.params;
+        const { data } = req.body;
+        let postosOcupados = await Agendamento.find({
+            unidadeId,
+            data,
+        }).select('postoId');
+
+        console.log(postosOcupados);
+
+        const postosDisponiveis = await Posto.find({
+            _id: {
+                $ne: postosOcupados,
+            },
+            status: 'D',            
+        }).select('_id');
+        console.log(postosDisponiveis);
+
+        res.json({ 
+            postosDisponiveis: postosDisponiveis.map(s => ({ posto: s.postosDisponiveis })),
+        });
+
+    } catch (err) {
+        res.json({ error: true, message: err.message});
+    }
+}); */

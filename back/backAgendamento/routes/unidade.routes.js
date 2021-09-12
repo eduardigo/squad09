@@ -6,8 +6,17 @@ const Posto = require('../models/posto');
 //Rota de criação da unidade de trabalho
 router.post('/', async (req, res) => {
     try {
-        const unidade = await new Unidade(req.body).save(); //cria a unidade e salva
+        //Verificar se já existe esta unidade
+        const { unidade } = req.body;
+        const existeUnidade = await Unidade.findOne({
+            unidade
+        });
+        if (existeUnidade) {
+            res.json({ message: 'Unidade já existe!' })
+        } else {
+        const unidade = await new Unidade(req.body).save();
         res.json({ unidade });
+        }
     } catch (err) {
         res.json({ error: true, message: err.message});
     }
