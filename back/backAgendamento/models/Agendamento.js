@@ -1,29 +1,27 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-//Definição dos campos do banco de dados
-const agendamento = new mongoose.Schema({
-    nome: {
-        type: String,
+const agendamento = new Schema({
+    usuarioId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'usuario',
         required: true,
     },
-    email: {
-        type: String,
+    unidadeId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'unidade',
         required: true,
     },
-    unidade: {
-        type: String,
+    postoId: {
+        type: mongoose.Types.ObjectId,
+        ref: 'postoDeTrabalho',
         required: true,
     },
     data: {
         type: Date,
         required: true,
-    },
-    lugar: {
-        //type: mongoose.Schema.Types.ObjectId,
-        //ref:"PostoDeTrabalho",
-        type: Number,
-        required: true,
-    },
+    }
 });
 
-module.exports = agendamento;
+
+module.exports = mongoose.model('Agendamento', agendamento);

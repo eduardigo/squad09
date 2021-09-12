@@ -1,5 +1,6 @@
-var agendamento = require('../models/Agendamento');
+var agendamento = require('../models/agendamento');
 var mongoose = require('mongoose');
+const postoDeTrabalho = require('../models/posto');
 
 const agendar = mongoose.model('Agendamento', agendamento);
 
@@ -15,6 +16,15 @@ class CadastroAgendamento {
         });
 
         try{
+           
+            //Estou testando algumas coisas para inserir novo agendamento
+            //const db = await mongoose.connect(agendamento);
+            //await db.Collection("postoDeTrabalho").insertOne(newAgendamento, function(err,res){
+                //if (err) throw err;
+                //console.log("1 registro inserido");
+                //db.close();
+            //});
+
             await newAgendamento.save();
             return true;
         }catch(err){
