@@ -6,8 +6,19 @@ const Posto = require('../models/posto');
 //Rota de criação do posto de trabalho
 router.post('/', async (req, res) => {
     try {
+        //Verificar se já existe este posto de trabalho cadastrado
+        const { unidadeId, mesa, cadeira } = req.body;
+        const existePosto = await Posto.findOne({
+            unidadeId,
+            mesa,
+            cadeira,
+        });
+        if (existePosto) {
+            res.json({ message: 'Posto de Trabalho já existe!' })
+        } else {
         const posto = await new Posto(req.body).save();
         res.json({ posto });
+        }
     } catch (err) {
         res.json({ error: true, message: err.message});
     }

@@ -14,6 +14,23 @@ router.post('/', async (req, res) => {
     }
 });
 
+//Rota para listar os agendamentos de um usuário
+router.get('/:usuarioId', async (req, res) => {
+    try {
+        const { usuarioId } = req.params;
+        const listarAgendamentos = await Agendamento.find({
+            usuarioId,
+        }).select('_id unidadeId postoId data');
+
+        res.json({
+            listarAgendamentos: listarAgendamentos.map(s => ({ unidade: s.unidadeId, posto: s.postoId, data: s.data, value: s._id })),
+        });
+
+    } catch (err) {
+        res.json({ error: true, message: err.message});
+    }
+});
+
 //Rota para editar a unidade e o posto no agendamento. Ainda precisamos verificar como fica para alterar a data.
 router.put('/:id', async (req, res) => {
     try {
