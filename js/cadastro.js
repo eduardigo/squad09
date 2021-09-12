@@ -28,6 +28,6 @@ if (senha.value == confirmarSenha.value) {
     });
 } else {
 
-    confirmarSenha.innerHTML = "digite uma senha idêntica!";
+    confirmarSenha.innerHTML = "As senhas não coincidem!";
 
 }
