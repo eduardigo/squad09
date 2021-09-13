@@ -33,6 +33,9 @@ loginForm.addEventListener('submit', function (e) {
         // sessionStorage = guarda na memória até fechar o navegador. localStorage
         sessionStorage.setItem("token", data.token)
         console.log(JSON.stringify(data.token));
+        // troca de pagina
+        window.location.href = "index.html";
+
 
     }).catch(function (error) {
         console.log(error);
