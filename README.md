@@ -130,9 +130,58 @@ $ node index.js
 # Agora abra o arquivo index.html e usufrua da aplicação.
 ```
 
-</br></br>
+ </br></br></br></br>
 
+
+# Participantes
 <!-- falta os autores -->
+<div align="center" style="display: flex">
+<div style="margin-right:40px">
+<a href="https://www.linkedin.com/in/eduardo-braga">
+ <img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
+ <br/><sub><b>Alisson de Sousa</b></sub></a>
+</div>
+
+<div style="margin-right:40px">
+ <a href="https://www.linkedin.com/in/eduardo-braga">
+ <img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
+ <br/><sub><b>Eduardo Braga</b></sub></a>
+</div>
+
+<div style="margin-right:40px">
+ <a href="https://www.linkedin.com/in/eduardo-braga">
+ <img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
+ <br/><sub><b>Janice Martins</b></sub></a>
+</div>
+
+<br>
+
+</div>
+
+<div align="center" style="display: flex">
+
+<div style="margin-right:40px">
+<a href="https://www.linkedin.com/in/eduardo-braga">
+ <img style="border-radius: 50%; margin-top: 40px" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
+ <br/><sub><b>Mariane Bardella</b></sub></a>
+</div>
+
+<div style="margin-right:40px">
+ <a href="https://www.linkedin.com/in/eduardo-braga">
+ <img style="border-radius: 50%; margin-top: 40px" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
+ <br/><sub><b>Samille Soares</b></sub></a>
+</div>
+
+<div style="margin-right:40px">
+ <a href="https://www.linkedin.com/in/eduardo-braga">
+ <img style="border-radius: 50%; margin-top: 40px" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
+ <br/><sub><b>Simone Paiva</b></sub></a>
+</div>
+
+<br>
+</div>
+ 
+
 
 
 
