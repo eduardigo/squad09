@@ -16,15 +16,6 @@ class CadastroAgendamento {
         });
 
         try{
-           
-            //Estou testando algumas coisas para inserir novo agendamento
-            //const db = await mongoose.connect(agendamento);
-            //await db.Collection("postoDeTrabalho").insertOne(newAgendamento, function(err,res){
-                //if (err) throw err;
-                //console.log("1 registro inserido");
-                //db.close();
-            //});
-
             await newAgendamento.save();
             return true;
         }catch(err){
