@@ -81,7 +81,7 @@
 
 - [ ✔️ ] Cadastro de usuário
 - [ ✔️ ] Login de usuário
-- [-----] Agentamento do usuário
+- [-----] Agendamento do usuário
 - [-----] Checagem de agendamentos
 
 
