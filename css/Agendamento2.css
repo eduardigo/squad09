@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    
+    --cor0: rgb(254, 68, 0); /*Laranja Fcamara*/
+    --cor1: #FC4300;
+    --cor2: #FC6027;
+    --cor3: #EF653C;
+    --cor4: #090909;
+    --cor5: #303033;
+    --cor6: #333333; 
+    --cor7: #333333d3;  
+    --cor8: #36357e; /*Azul Fcamara*/
+    --cor9: #414099;
+    --cor10: #4b4fa1; 
+    --cor11: #FFFFFF;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor11);
+    color: rgb(252, 249, 249);
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.calendar{
+    width: 35rem;
+    height: 35rem;
+    background-color: var(--cor7);
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+}
+
+.month{
+    width: 100%;
+    height: 9rem;
+    background-color: var(--cor10);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.month i{
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.month h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p{
+    font-size: 1.6rem;
+}
+
+.weekdays{
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.weekdays div{
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    width: calc(34rem / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.days{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.2rem;
+}
+
+.days div{
+    font-size: 1.4rem;
+    margin: 0.3rem;
+    width: calc(30rem / 7);
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.5);
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today){
+    background-color: var(--cor9);
+    border: 0.2rem solid #777;
+    cursor: pointer;
+}
+
+.prev-date, .next-date{
+    opacity: 0.5;
+}
+
+.today{
+    background-color: var(--cor3);
+}
