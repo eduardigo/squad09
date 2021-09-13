@@ -6,7 +6,8 @@
 <p align="center">
 	<a href="#tecnologias">Tecnologias</a> • 
     <a href="#funcionalidades">Funcionalidades</a> • 
-	<a href="#pre-requisitos">Requisitos</a> • 
+	<a href="#pre-requisitos">Pré requisitos</a> • 
+    	<a href="#proposta-desafio">Proposta do desafio</a> • 
 	<a href="#passo-a-passo">Passo a passo</a>
 </p>
 
@@ -61,7 +62,20 @@
 
 </br></br>
 
-<h4 id="funcionalidades"></h4>
+<h6 id="proposta-desafio" align="center"></h6>
+
+##  Proposta do desafio
+
+- Deverá ser uma aplicação web responsiva;
+- Deverá ser entregue no mínimo 3 telas do projeto;
+- Vocês estarão livres para utilizar qualquer tecnologia que tenham mais afinidade;
+- Seja criativo! Pensem fora da caixinha, seja inovador. Nós demos o problema, e vocês, como consultores, deverão trazer a melhor solução;
+- Mas lembre-se: a entrega é um MVP, um mínimo produto viável, ou seja, façam aquilo que entregará valor ao cliente e usuário final!
+
+
+<br><br>
+
+<h4 id="funcionalidades" align="center"></h4>
 
 ## Funcionalidades
 
@@ -117,6 +131,8 @@ $ node index.js
 ```
 
 </br></br>
+
+<!-- falta os autores -->
 
 
 
