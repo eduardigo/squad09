@@ -8,7 +8,7 @@
     <a href="#funcionalidades">Funcionalidades</a> • 
 	<a href="#pre-requisitos">Pré requisitos</a> • 
     	<a href="#proposta-desafio">Proposta do desafio</a> • 
-	<a href="#passo-a-passo">Passo a passo</a>
+	<a href="#passo-a-passo">Como utilizar?</a>
 </p>
 
 </br>
@@ -107,7 +107,7 @@ Recomendamos o uso de um editor para trabalhar com o código como o [VSCode](htt
 
 <h4 id="passo-a-passo"></h4>
 
-## Passo a passo
+## Como utilizar?
 
 </br>
 
@@ -134,52 +134,17 @@ $ node index.js
 
 
 # Participantes
-<!-- falta os autores -->
-<div align="center" style="display: flex">
-<div style="margin-right:40px">
-<a href="https://www.linkedin.com/in/eduardo-braga">
- <img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
- <br/><sub><b>Alisson de Sousa</b></sub></a>
-</div>
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Alisson de Sousa</b></sub></a><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Eduardo Braga</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="110px;" alt=""/><br /><sub><b>Janice Martins</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a>  <a href="https://www.linkedin.com/in/eduardo-braga"></a></td> 
+    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="90px;" alt=""/><br /><sub><b>Mariane Bardella</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="105px;" alt=""/><br /><sub><b>Samille Soares</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Simone Paiva</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
 
-<div style="margin-right:40px">
- <a href="https://www.linkedin.com/in/eduardo-braga">
- <img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
- <br/><sub><b>Eduardo Braga</b></sub></a>
-</div>
-
-<div style="margin-right:40px">
- <a href="https://www.linkedin.com/in/eduardo-braga">
- <img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
- <br/><sub><b>Janice Martins</b></sub></a>
-</div>
-
-<br>
-
-</div>
-
-<div align="center" style="display: flex">
-
-<div style="margin-right:40px">
-<a href="https://www.linkedin.com/in/eduardo-braga">
- <img style="border-radius: 50%; margin-top: 40px" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
- <br/><sub><b>Mariane Bardella</b></sub></a>
-</div>
-
-<div style="margin-right:40px">
- <a href="https://www.linkedin.com/in/eduardo-braga">
- <img style="border-radius: 50%; margin-top: 40px" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
- <br/><sub><b>Samille Soares</b></sub></a>
-</div>
-
-<div style="margin-right:40px">
- <a href="https://www.linkedin.com/in/eduardo-braga">
- <img style="border-radius: 50%; margin-top: 40px" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/>
- <br/><sub><b>Simone Paiva</b></sub></a>
-</div>
-
-<br>
-</div>
+  </tr>
+</table>
  
 
 
