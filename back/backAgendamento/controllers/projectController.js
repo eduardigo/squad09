@@ -86,7 +86,7 @@ router.put('/:projectId', async (req, res) => {
     }
 });
 
-//Rote de exclusão de projeto
+//Rota de exclusão de projeto
 router.delete('/:projectId', async (req, res) => {
     try {
         await Project.findByIdAndRemove(req.params.projectId);
