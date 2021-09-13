@@ -1,35 +1,67 @@
-<h1 align="center" style="font-size:45px" style="color:black" >Projeto</h1>
-
-<!-- # Nome do Projeto -->
+<h1 align="center" style="font-size:45px">FCalendar</h1>
 
 >Status: Em andamento ⚠️
 
-<!-- <p align="center">Aplicação feita </p> -->
+<br>
+<p align="center">
+	<a href="#tecnologias">Tecnologias</a> • 
+    <a href="#funcionalidades">Funcionalidades</a> • 
+	<a href="#pre-requisitos">Requisitos</a> • 
+	<a href="#passo-a-passo">Passo a passo</a>
+</p>
+
 </br>
+<div align="center">
 
 ### Aplicação feita a fim de solucionar o problema de agendamento à ida ao escritório proposto pela FCAMARA.
+
+</div>
 
 </br>
 </br>
 
 <div align="center">
 
-## Tecnologias utilizadas
 
 </br>
+<h4 id="tecnologias"></h4>
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat-square&logo=node.js&logoColor=white)
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=flat-square&logo=express&logoColor=%2361DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat-square&logo=mongodb&logoColor=white)
+## Tecnologias utilizadas
+
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" style="text-decoration:none">
+<img alt="html5 badge" src="https://img.shields.io/badge/HTML5-%23E34F26.svg?style=flat&logo=html5&logoColor=white">
+</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" style="text-decoration:none">
+<img alt="css3 badge" src="https://img.shields.io/badge/CSS3-%231572B6.svg?style=flat&logo=css3&logoColor=white">
+</a>
+
+<a href="getbootstrap.com" style="text-decoration:none">
+<img alt="bootstrap badge" src="https://img.shields.io/badge/Bootstrap-%23563D7C.svg?style=flat&logo=bootstrap&logoColor=white">
+</a>
+
+<a href="https://www.javascript.com" style="text-decoration:none">
+<img alt="JavaScript badge" src="https://img.shields.io/badge/JavaScript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E">
+</a>
+
+<a href="https://nodejs.org/en/" style="text-decoration:none">
+<img alt="NodeJS badge" src="https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white">
+</a>
+
+<a href="https://expressjs.com" style="text-decoration:none">
+<img alt="express badge" src="https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB">
+</a>
+
+<a href="https://www.mongodb.com/try/download/community" style="text-decoration:none">
+<img alt="MongoDB badge" src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=flat&logo=mongodb&logoColor=white">
+</a>
 
 </div>
 
-
-<!-- tabela que vai ficar aqui -->
 </br></br>
+
+<h4 id="funcionalidades"></h4>
 
 ## Funcionalidades
 
@@ -42,6 +74,8 @@
 <!-- Possíveis fotos da execução da aplicação -->
 </br></br>
 
+<h4 id="pre-requisitos"></h4>
+
 ## Pré requisitos:
 
 </br>
@@ -50,11 +84,16 @@ Antes de começar, é necessário que você tenha instalado em sua máquina algu
 
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/), [MongoDB](https://www.mongodb.com/try/download/community)
 
+Recomendamos o uso de um editor para trabalhar com o código como o [VSCode](https://code.visualstudio.com/)
+
+
+
 
 </br></br>
 
+<h4 id="passo-a-passo"></h4>
 
-### Passo a passo
+## Passo a passo
 
 </br>
 
@@ -74,8 +113,11 @@ $ npm install
 # Após a instalação das dependências, ainda na mesma pasta, ligue o servidor
 $ node index.js
 
-# Agora abra o arquivo html da página index! :)
+# Agora abra o arquivo index.html e usufrua da aplicação.
 ```
+
+</br></br>
+
 
 
 
