@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -21,32 +23,204 @@
 }
 
 body{
-    background-color: var(--cor9);
-}
-
-
-.first{
-    color: var(--cor8);
-    height: 100%;
-    width: 100%;
-    margin: 0;   
-}
-
-.img1{
-    width: 200px;
-    height: 50px;
-    margin: 15px;
-}
-
-.agenda1{
-    text-align: center;
-    background-color: var(--cor2);
-    margin: 0px;
-    padding: 0px;
-}
-
-.text1{
-    color: var(--cor9);
+    background-color: var(--cor11);
     
 }
+
+.container{
+    background-color: var(--cor11);
+    border: 0.5vh solid var(--cor10);
+    border-radius: 2vh;
+    display: block;
+    width: 142vh;
+    height: 89vh;
+    margin: 12vh 41vh;
+}
+
+#text{
+    padding: 3vh;
+    text-align: center;
+    font-family:'Montserrat', sans-serif;
+    color: #404099;
+}
+
+
+.opcao{
+    background-color: var(--cor11);
+    padding: 3vh 3vh 4vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+}
+
+.agenda{
+    padding:0.5vh; 
+    border-radius: 0.7rem;
+    font-size: 2.5vh;
+    font-family:'Montserrat', sans-serif;
+    width: 34vh;
+    height: 10vh;
+    left: 45vh;
+    top: 19vh;
+    margin: 0.3vh 1vh;
+
+}
+
+.agenda:nth-child(1){
+    background-color: var(--cor11);
+    color: #404099;
+    border: 0.4vh solid #404099;
+}
+
+.agenda:nth-child(2){
+    background-color: #404099;
+    color: var(--cor11);
+    border: 0.4vh solid #404099;
+    text-align: center;
+}
+
+.box{
+    display: flex; 
+    margin: 6vh;
+    
+}
+
+.calendar{
+    width: 100vh;
+}
+
+#text2{
+    padding: 3vh;
+    font-size: 3vh;
+    font-family:'Montserrat', sans-serif;
+    color: #404099;
+}
+
+.unid{
+    padding: 1.5vh;
+}
+
+.unit{
+    padding: 1.5vh;
+    border-radius: 0.7rem;
+    font-size: 2.5vh;
+    font-family:'Montserrat', sans-serif;
+    margin: 1vh;
+}
+
+.unit:nth-child(1){
+    border: 0.4vh solid #404099;
+    color: #404099;
+    background-color: var(--cor11);
+}
+
+.unit:nth-child(2){
+    border: 0.4vh solid #404099;
+    color: var(--cor11);
+    background-color: #404099;
+}
+
+
+.form{
+    padding: 2vh;
+}
+
+
+.title{
+    padding-top: 5vh;
+}
+
+.data{
+    padding: 2vh;
+    border: 0.2vh solid black;
+    border-radius: 0.7rem;
+    font-size: 2.5vh;
+    font-family:'Montserrat', sans-serif;
+}
+
+.title2{
+    padding-top: 5vh;
+    
+}
+
+.time{
+    display: flex;
+    flex-direction: row;
+    padding: 1.5vh;
+    border-radius: 0.7rem;
+    font-size: 2.5vh;
+    font-family:'Montserrat', sans-serif;
+    margin: 1vh;
+
+}
+
+.tables{
+    width: 100vh;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+option{
+    padding: 5vh;
+}
+
+h5{
+    margin: 3vh;
+    color: var(--cor1);
+    font-size: 2.5vh;
+    font-style: italic;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.estacao{
+    padding: 1vh;
+    border-radius: 1vh;
+    margin: 1vh;
+    border: .5vh solid #404099;
+    background-color: white;
+    color: #404099;
+    font-family:'Montserrat', sans-serif;
+}
+
+
+.estacao:nth-child(4){
+    border: 0.4vh solid #404099;
+    color: white;
+    background-color: #404099;
+}
+
+.estacao:nth-child(6){
+    border: 0.4vh solid #404099;
+    color: white;
+    background-color: #404099;
+}
+
+.estacao:nth-child(8){
+    border: 0.4vh solid #404099;
+    color: white;
+    background-color: #404099;
+}
+
+.estacao:nth-child(10){
+    border: 0.4vh solid #404099;
+    color: white;
+    background-color: #404099;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
