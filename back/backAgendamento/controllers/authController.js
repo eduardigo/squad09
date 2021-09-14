@@ -87,8 +87,8 @@ router.post('/esqueceu_senha', async (req, res) => {
         transport.sendMail({
             from: "Squad09 <squad09hackathon@outlook.com>",
             to: email,
-            subject: "Siga os passos abaixo para redefinir sua senha",
-            text: "TEXTO A SER ELABORADO" + token,
+            subject: "Siga os passos abaixo para redefinir sua senha do sistema de agendamento FCalendar",
+            text: "Percebemos que você esqueceu sua senha de acesso do sistema FCalendar para agendar sua ida aos escritórios da FCamara, fique tranquilo! \nBasta copiar o código abaixo para redefinir sua senha \n" + token,
             context: { token },
         }, (err) => {
             console.log(err);
