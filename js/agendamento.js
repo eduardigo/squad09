@@ -14,12 +14,20 @@ const santosClicked = document.querySelector(".unitSantos-Clicked");
 const sp = document.querySelector(".unitSP");
 const spClicked = document.querySelector(".unitSP-Clicked");
 
+const divCadeiras = document.querySelector(".cadeira-flex");
+const divCadeiras2 = document.querySelector(".cadeira-flex2");
+const cadeiraDisponivel = document.querySelector(".disponivel");
+const cadeiraOcupada = document.querySelector(".ocupada");
+
+
+const teste = document.querySelector(".cadeira-flex input .selecionada");
+
 
 clickAgendar();
 clickVerAgendamentos();
 clickSP();
 clickSantos();
-
+selecionaCadeira();
 
 
 
@@ -94,4 +102,69 @@ function clickSP() {
 
     });
 }
+
+
+function selecionaCadeira() {
+
+    container.addEventListener("click", (e) => {
+
+        if (e.target.classList.contains("disponivel") && !e.target.classList.contains("selecionada") && !e.target.classList.contains("bloqueada")) {
+            const cadeiraSelecionada = document.querySelector(".selecionada");
+
+            if (cadeiraSelecionada) {
+                cadeiraSelecionada.classList.remove("selecionada");
+            }
+            e.target.classList.toggle("selecionada");
+        } else {
+            e.target.classList.remove("selecionada");
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // divCadeiras.addEventListener("click", (e) => {
+    //     if (e.target.classList.contains("disponivel") && !e.target.classList.contains("selecionada")) {
+    //         const cadeiraSelecionada = document.querySelector(".selecionada");
+    //         if (cadeiraSelecionada) {
+    //             cadeiraSelecionada.classList.add("disponivel");
+    //             cadeiraSelecionada.classList.remove("selecionada");
+
+    //         }
+    //         console.log("OI");
+    //         e.target.classList.remove("disponivel");
+    //         e.target.classList.toggle("selecionada");
+    //     } else {
+    //         e.target.classList.remove("selecionada");
+    //     }
+    // });
+
+    // divCadeiras2.addEventListener("click", (e) => {
+    //     if (e.target.classList.contains("disponivel") && !e.target.classList.contains("selecionada")) {
+    //         const cadeiraSelecionada = document.querySelector(".selecionada");
+    //         if (cadeiraSelecionada) {
+    //             cadeiraSelecionada.classList.add("disponivel");
+    //             cadeiraSelecionada.classList.remove("selecionada");
+
+    //         }
+    //         console.log("OI");
+    //         e.target.classList.remove("disponivel");
+    //         e.target.classList.toggle("selecionada");
+    //     }
+    // });
+
+}
+
 

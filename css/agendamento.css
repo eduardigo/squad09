@@ -68,8 +68,17 @@ body {
     background-color: var(--cor11);
 }
 
-.agendar-clicked, .ver-clicked {
-    filter:brightness(0.80);
+.agendar:hover, .ver-agenda:hover{
+    transition: 0.2s;
+    cursor: pointer;
+    background-color: #404099;
+    color: white;
+    border: 0.4vh solid #404099;
+}
+
+.agendar-clicked, .agendar-clicked:hover, .ver-clicked, .ver-clicked:hover {
+    /* filter:brightness(0.80); */
+    transition: 0.2s;
     padding: 0.5vh;
     border-radius: 0.4rem;
     font-size: 2.5vh;
@@ -79,17 +88,12 @@ body {
     left: 45vh;
     top: 19vh;
     margin: 0.3vh 1vh;
-    background-color: #404099;
+    background-color: #1C1C56;
     color: white;
-    border: 0.4vh solid #404099;
+    border: 0.4vh solid #1C1C56;
 }
 
-.agendar:hover, .ver-agenda:hover{
-    cursor: pointer;
-    background-color: #404099;
-    color: white;
-    border: 0.4vh solid #404099;
-}
+
 
 .box {
     display: flex;
@@ -142,6 +146,7 @@ body {
 }
 
 .unitSP:hover, .unitSantos:hover {
+    transition: 0.2s;
     cursor:pointer;
     border: 0.4vh solid #404099;
     color: var(--cor11);
@@ -149,11 +154,12 @@ body {
 }
 
 
-.unitSP-clicked, .unitSantos-clicked {
-    filter:brightness(0.8);
-    border: 0.4vh solid #404099;
+.unitSP-clicked, .unitSantos-clicked, .unitSP-clicked:hover, .unitSantos-clicked:hover {
+    /* filter:brightness(0.8); */
+    transition: 0.2s;
+    border: 0.4vh solid #1C1C56;
     color: var(--cor11);
-    background-color: #404099;
+    background-color: #1C1C56;
 }
 
 
@@ -217,6 +223,7 @@ h5 {
 }
 
 .disponivel {
+    transition: 0.2s;
     flex: 0 1 calc(20% - 8px);
     padding: 1vh;
     border-radius: 1vh;
@@ -244,7 +251,7 @@ h5 {
 
 
 
-.cadeira-flex {
+.cadeira-flex, .cadeira-flex2 {
     margin-left: 2vh;
     display: flex;
     flex-wrap: wrap;
@@ -254,7 +261,7 @@ h5 {
 
 .disponivel:hover {
 cursor: pointer;    
-filter: brightness(1.50);
+filter: brightness(1.2);
 }
 
 .bloqueada {
@@ -268,28 +275,48 @@ filter: brightness(1.50);
 
 /* CADEIRAS DISPONIVEIS */
 
+
 .cadeira-flex input:nth-child(1) {
-    border: 0.4vh solid #404099;
-    color: white;
-    background-color: #404099;
+    border: 0.4vh solid black;
+    color: black;
+    background-color: #EFEFEF;
 }
 
 .cadeira-flex input:nth-child(5) {
-    border: 0.4vh solid #404099;
-    color: white;
-    background-color: #404099;
+    border: 0.4vh solid black;
+    color: black;
+    background-color: #EFEFEF;
 }
 
-.cadeira-flex input:nth-child(7) {
-    border: 0.4vh solid #404099;
-    color: white;
-    background-color: #404099;
+.cadeira-flex2 input:nth-child(4) {
+    border: 0.4vh solid black;
+    color: black;
+    background-color: #EFEFEF;
 }
 
-.cadeira-flex input:nth-child(9) {
-    border: 0.4vh solid #404099;
-    color: white;
-    background-color: #404099;
+.cadeira-flex2 input:nth-child(2) {
+    border: 0.4vh solid black;
+    color: black;
+    background-color: #EFEFEF;
 }
 
-/* CADEIRAS BLOQUEADAS */
+/* CADEIRAS SELECIONADAS */
+
+.selecionada, .selecionada:hover  {
+    border: 0.4vh solid #1C1C56;
+    background-color: #1C1C56;
+    flex: 0 1 calc(20% - 8px);
+    padding: 1vh;
+    border-radius: 1vh;
+    margin: 0.5vh;
+    color: #404099;
+    font-family: 'Montserrat', sans-serif;
+    width: 117px;
+    height: 47px;
+}
+
+/* CADEIRAS JA SELECIONADAS */
+
+.ocupada, .ocupada:hover {
+
+}
