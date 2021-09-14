@@ -1,68 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/agendamento.css">
-    
 
-    <title>FC Camara</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/agendamento.css">
+
+
+  <title>FC Camara</title>
 </head>
+
 <body>
   <div class="container">
-      <h1 id="text">Olá, o que você deseja fazer?</h1>
-      <div class="opcao">
-        <input class="agenda" type="button" value="Agendar"/>
-        <input class="agenda" type="button" value="Ver Agendamentos">
-      </div>
-      <div class="box">
-        <div class="calendar">
-          <h4 id="text2">Selecione a unidade:</h4>
+    <div>
+    <h1 id="text">Olá, o que você deseja fazer?</h1>
+    <div class="opcao">
+      <input class="agendar" type="button" value="Agendar" />
+      <input class="ver-agenda" type="button" value="Ver Agendamentos">
+    </div>
+    <div class="box">
+      <div class="calendar">
+        <h4 id="text2">Selecione a unidade:</h4>
         <div class="unid">
-          <input class="unit" type="button" value="FC São Paulo">
-          <input class="unit" type="button" value="FC Santos">
-        </div>      
-          <h4 id="text2">Selecione o dia:</h4>
-          <div class="form">
-            <form action="" class="agend">
-              <input type="date" class="data">
-            </form>                         
-          </div>
+          <input class="unitSP" type="button" value="FC São Paulo">
+          <input class="unitSantos" type="button" value="FC Santos">
+        </div>
+        <h4 id="text2">Selecione o dia:</h4>
+        <div class="form">
+          <form action="" class="agend">
+            <input type="date" class="data">
+          </form>
+        </div>
       </div>
       <div class="tables">
-        <h4 id="text2">Escolha estação de trabalho</h4>
-        <select name="estação" id="fila">
-          <option>Estacao 00</option>
-          <option>Estacao 01</option>
-          <option>Estacao 02</option>
-          <option>Estacao 03</option>
-          <option>Estacao 04</option>
-          <option>Estacao 05</option>
-          <option>Estacao 05</option>
-          <option>Estacao 07</option>
-        </select>       
-        
+        <div class="estacao-alignment">
+          <h4 id="text3">Escolha estação de trabalho</h4>
+          <select name="estação" id="fila">
+            <option>Estacao 01</option>
+            <option>Estacao 02</option>
+            <option>Estacao 03</option>
+            <option>Estacao 04</option>
+            <option>Estacao 05</option>
+            <option>Estacao 06</option>
+            <option>Estacao 07</option>
+            <option>Estacao 08</option>
+            <option>Estacao 09</option>
+            <option>Estacao 10</option>
+          </select>
+        </div>
 
-        <h4 id="text2">Escolha a mesa de trabalho</h4>
-        <h5>As estações em branco estao bloqueadas</h5>
-        <input class="estacao" type="button" value="Cadeira 1">
-        <input class="estacao" type="button" value="Cadeira 2">
-        <input class="estacao" type="button" value="Cadeira 3">
-        <input class="estacao" type="button" value="Cadeira 4">
-        <br>
-        <input class="estacao" type="button" value="Cadeira 5">
-        <input class="estacao" type="button" value="Cadeira 6">
-        <input class="estacao" type="button" value="Cadeira 7">
-        <input class="estacao" type="button" value="Cadeira 8">
-        
+
+        <h4 id="text3">Escolha a mesa de trabalho</h4>
+        <h5 id="text-mesa"style="text-align:center">As estações em branco estao bloqueadas</h5>
+
+        <div class="cadeira-flex">
+          <input class="cadeira disponivel" type="button" value="Cadeira 01">
+          <input class="cadeira bloqueada" type="button" value="">
+          <input class="cadeira bloqueada" type="button" value="">
+          <input class="cadeira bloqueada" type="button" value="">
+          <input class="cadeira disponivel" type="button" value="Cadeira 05">
+
+          <!-- <div class="cadeira-flex2"> -->
+          <input class="cadeira bloqueada" type="button" value="">
+          <input class="cadeira disponivel" type="button" value="Cadeira 07">
+          <input class="cadeira bloqueada" type="button" value="">
+          <input class="cadeira disponivel" type="button" value="Cadeira 09">
+          <input class="cadeira bloqueada" type="button" value="">
+          <!-- </div> -->
+        </div>
       </div>
+    </div>
   </div>
-</div>
-    
-      
-      
 
-    
+
+
+
+<script src="js/agendamento.js"></script>
 </body>
+
 </html>

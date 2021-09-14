@@ -1,161 +1,194 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: none;
 }
 
-:root{
-    
-    --cor0: rgb(254, 68, 0); /*Laranja Fcamara*/
+:root {
+    --cor0: rgb(254, 68, 0);
+    /*Laranja Fcamara*/
     --cor1: #FC4300;
     --cor2: #FC6027;
     --cor3: #EF653C;
     --cor4: #090909;
     --cor5: #303033;
-    --cor6: #333333; 
-    --cor7: #333333d3;  
-    --cor8: #36357e; /*Azul Fcamara*/
+    --cor6: #333333;
+    --cor7: #333333d3;
+    --cor8: #36357e;
+    /*Azul Fcamara*/
     --cor9: #414099;
-    --cor10: #4b4fa1; 
+    --cor10: #4b4fa1;
     --cor11: #FFFFFF;
 }
 
-body{
+body {
     background-color: var(--cor11);
-    
 }
 
-.container{
+.container {
     background-color: var(--cor11);
     border: 0.5vh solid var(--cor10);
     border-radius: 2vh;
     display: block;
-    width: 142vh;
-    height: 89vh;
-    margin: 12vh 41vh;
+    width: 150vh;
+    height: 90vh;
+    /* margin: 12vh 41vh; */
+    margin: 3vh auto;
 }
 
-#text{
+
+
+#text {
     padding: 3vh;
     text-align: center;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #404099;
 }
 
-
-.opcao{
+.opcao {
     background-color: var(--cor11);
     padding: 3vh 3vh 4vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
-.agenda{
-    padding:0.5vh; 
-    border-radius: 0.7rem;
+.agendar, .ver-agenda {
+    padding: 0.5vh;
+    border-radius: 0.4rem;
     font-size: 2.5vh;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     width: 34vh;
     height: 10vh;
     left: 45vh;
     top: 19vh;
     margin: 0.3vh 1vh;
-
-}
-
-.agenda:nth-child(1){
     background-color: var(--cor11);
-    color: #404099;
-    border: 0.4vh solid #404099;
 }
 
-.agenda:nth-child(2){
+.agendar-clicked, .ver-clicked {
+    filter:brightness(0.80);
+    padding: 0.5vh;
+    border-radius: 0.4rem;
+    font-size: 2.5vh;
+    font-family: 'Montserrat', sans-serif;
+    width: 34vh;
+    height: 10vh;
+    left: 45vh;
+    top: 19vh;
+    margin: 0.3vh 1vh;
     background-color: #404099;
-    color: var(--cor11);
+    color: white;
     border: 0.4vh solid #404099;
-    text-align: center;
 }
 
-.box{
-    display: flex; 
+.agendar:hover, .ver-agenda:hover{
+    cursor: pointer;
+    background-color: #404099;
+    color: white;
+    border: 0.4vh solid #404099;
+}
+
+.box {
+    display: flex;
     margin: 6vh;
-    
 }
 
-.calendar{
+.calendar {
     width: 100vh;
 }
 
-#text2{
+#text2 {
+    /* text-align: center; */
     padding: 3vh;
     font-size: 3vh;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #404099;
 }
 
-.unid{
-    padding: 1.5vh;
+#text3 {
+    text-align: center;
+    padding: 3vh;
+    font-size: 3vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #404099;
 }
 
-.unit{
+.unid {
+    padding: 1.5vh;
+    /* text-align: center; */
+}
+
+
+
+.unitSantos {
     padding: 1.5vh;
     border-radius: 0.7rem;
     font-size: 2.5vh;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 1vh;
+    border: 0.4vh solid
 }
 
-.unit:nth-child(1){
-    border: 0.4vh solid #404099;
-    color: #404099;
-    background-color: var(--cor11);
+.unitSP {
+    padding: 1.5vh;
+    border-radius: 0.7rem;
+    font-size: 2.5vh;
+    font-family: 'Montserrat', sans-serif;
+    margin: 1vh;
+    border: 0.4vh solid
 }
 
-.unit:nth-child(2){
+.unitSP:hover, .unitSantos:hover {
+    cursor:pointer;
     border: 0.4vh solid #404099;
     color: var(--cor11);
     background-color: #404099;
 }
 
 
-.form{
+.unitSP-clicked, .unitSantos-clicked {
+    filter:brightness(0.8);
+    border: 0.4vh solid #404099;
+    color: var(--cor11);
+    background-color: #404099;
+}
+
+
+
+.form {
     padding: 2vh;
 }
 
-
-.title{
+.title {
     padding-top: 5vh;
 }
 
-.data{
+.data {
     padding: 2vh;
     border: 0.2vh solid black;
     border-radius: 0.7rem;
     font-size: 2.5vh;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.title2{
+.title2 {
     padding-top: 5vh;
-    
 }
 
-.time{
+.time {
     display: flex;
     flex-direction: row;
     padding: 1.5vh;
     border-radius: 0.7rem;
     font-size: 2.5vh;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 1vh;
-
 }
 
-.tables{
+.tables {
     width: 100vh;
     height: 70vh;
     justify-content: center;
@@ -163,11 +196,15 @@ body{
     flex-direction: row;
 }
 
-option{
+.estacao-alignment {
+    text-align: center;
+}
+
+option {
     padding: 5vh;
 }
 
-h5{
+h5 {
     margin: 3vh;
     color: var(--cor1);
     font-size: 2.5vh;
@@ -175,52 +212,84 @@ h5{
     font-family: 'Montserrat', sans-serif;
 }
 
-.estacao{
+#text-mesa, #text-estacao {
+    text-align: center;
+}
+
+.disponivel {
+    flex: 0 1 calc(20% - 8px);
     padding: 1vh;
     border-radius: 1vh;
-    margin: 1vh;
+    margin: 0.5vh;
     border: .5vh solid #404099;
     background-color: white;
     color: #404099;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    width: 117px;
+    height: 47px;
+}
+
+.bloqueada {
+    flex: 0 1 calc(20% - 8px);
+    padding: 1vh;
+    border-radius: 1vh;
+    margin: 0.5vh;
+    border: .5vh solid #E1E1E1;
+    /* background-color: white; */
+    color: #404099;
+    font-family: 'Montserrat', sans-serif;
+    width: 117px;
+    height: 47px;
 }
 
 
-.estacao:nth-child(4){
+
+.cadeira-flex {
+    margin-left: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.disponivel:hover {
+cursor: pointer;    
+filter: brightness(1.50);
+}
+
+.bloqueada {
+    background-image: url(../imagens/Cadeira\ bloqueada.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    /* padding-<left|right>: <width of image>px; */
+
+}
+
+
+/* CADEIRAS DISPONIVEIS */
+
+.cadeira-flex input:nth-child(1) {
     border: 0.4vh solid #404099;
     color: white;
     background-color: #404099;
 }
 
-.estacao:nth-child(6){
+.cadeira-flex input:nth-child(5) {
     border: 0.4vh solid #404099;
     color: white;
     background-color: #404099;
 }
 
-.estacao:nth-child(8){
+.cadeira-flex input:nth-child(7) {
     border: 0.4vh solid #404099;
     color: white;
     background-color: #404099;
 }
 
-.estacao:nth-child(10){
+.cadeira-flex input:nth-child(9) {
     border: 0.4vh solid #404099;
     color: white;
     background-color: #404099;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* CADEIRAS BLOQUEADAS */
