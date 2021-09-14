@@ -26,6 +26,14 @@ body {
     background-color: var(--cor11);
 }
 
+.foto{
+    width: 36vh;
+    height: 14vh;
+    margin-left: 20vh;
+}
+
+
+
 .container {
     background-color: var(--cor11);
     border: 0.5vh solid var(--cor10);
@@ -249,6 +257,10 @@ h5 {
     height: 47px;
 }
 
+.cad-flex{
+    margin: 5vh;
+    width: 100vh;
+}
 
 
 .cadeira-flex, .cadeira-flex2 {

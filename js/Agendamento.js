@@ -166,3 +166,5 @@ function selecionaCadeira() {
     // });
 
 }
+
+

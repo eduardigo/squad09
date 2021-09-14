@@ -24,23 +24,21 @@
 body{
     background-color: var(--cor11);
     font-family:'Montserrat', sans-serif;
-    min-height: 600px;
-    min-width: 600px;
 }
 
 .photo{
     width: 100%;
-    width: 160px;
-    height: 40px;
-    margin: 15px;
+    width: 30vh;
+    height: 10vh;
+    margin: 2vh;
     text-align: center;
 }
 
 .login{
-    min-width: 300px;
-    max-height: 1000px;
+    min-width: 33vh;
+    max-height: 111vh;
     margin: auto;
-    height: 600px;
+    height: 81vh;
     background-color: var(--cor11);
     display: flex;
     justify-content: center;
@@ -48,12 +46,12 @@ body{
 }
 
 .login-container{
-    min-height: 154px;
-    width: 500px;
+    min-height: 17vh;
+    width: 80vh;
     background-color: var(--cor11);
     box-sizing: border-box;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 1.5vh;
+    border-radius: .8vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,69 +62,68 @@ body{
 }
 
 .login_title{
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 1vh;
+    margin-bottom: 2vh;
     color: var(--cor9);
-    font-size: 15px;
+    font-size: 3vh;
 }
 
 p{
-    margin-top: 10px;
+    margin-top: 3vh;
 }
 
 .login-form{
-    padding-top: 10px;
-    padding-left: 80px;
-    margin: 20px auto;
+    padding-top: 1vh;
+    padding-left: 13vh;
+    margin: 3.2vh auto;
     align-items: center;
     width: 100%;
     justify-content: center;
 }
 
 .login-input{
-    height: 25px;
-    width: 300px;
-    border-radius: 5px;
+    height: 6vh;
+    width: 50vh;
+    border-radius: 1vh;
     box-sizing: border-box;
-    padding-left: 20px;
+    padding-left: 5vh;
     outline: none;
+    border: .5vh solid #404099;
 }
 
 .login-reset{
-    margin: 5px;
+    margin: .5vh;
     display: flex;
-    font-size: 12px;
+    font-size: 2vh;
 }
 
-.login-submit1{
+.login-submit{
     background-color: var(--cor11);
-    border: 2px solid #404099;
+    border: .6vh solid #404099;
     color: var(--cor10);
-       
+    background-size: 8vh;
 }
 
-.login-submit2{
-    background-color: var(--cor10);
-    border: none;
+.login-submit:hover{
+    background-color: #404099;
     color: var(--cor11);
 }
 
-.box .login-submit1, .login-submit2{
-    justify-content: center;
-    align-items: center;
-    padding: 14px 16px 13px;
-    height: 40px;
-    width: 160px;
-    margin-top: 15px;
+.box .login-submit{
+    padding: 1.5vh 1.7vh 1.4vh;
+    height: 6vh;
+    width: 25vh;
+    margin-top: 3.5vh;
     font-family:'Montserrat', sans-serif;
-    background-size: 80px;
-    border-radius: 12px; 
-    
+    background-size: 8vh;
+    border-radius: 1.5vh; 
 }
 
 .rodape{
     width: 100%;
     background-color: var(--cor9);
+    height: 22vh;
+    
 }
 
 #logo1{
