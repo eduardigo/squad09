@@ -1,8 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-
-/*font-family: 'Montserrat', sans-serif;
-*/
-
 * {
     margin: 0;
     padding: 0;
@@ -67,6 +63,7 @@
 .container{
     margin: auto;
     width: 100vh;
+    
 }
 
 .opcoes{
@@ -80,8 +77,8 @@
     font-family: 'Montserrat', sans-serif;
     color: var(--cor10);
     font-size: 5vh;
-    margin-bottom: 4vh;
-    margin-top: 7vh;
+    margin-bottom: 6vh;
+    margin-top: 6vh;
     text-align: center;   
 }
 
@@ -90,7 +87,7 @@
     border: 0.5vh solid var(--cor10);
     font-size: 2.5vh;
     font-family: 'Montserrat', sans-serif;
-    width: 50vh;
+    width: 47vh;
     height: 10vh;
     background-color: var(--cor11);
 }
@@ -114,26 +111,36 @@
     border-radius: 12px;
 }
 
-.foto{
+.title{
     position: absolute;
-    left: 48%;
-    right: 16.67%;
-    top: 60%;
-    bottom: 12.5%;
+    left: 33%;
+    right: 79.68%;
+    top: 47.94%;
+    bottom: 80.24%;
 }
 
-.text2{
+.title2{
     position: absolute;
-    width: 824px;
-    height: 21px;
-    left: 260px;
-    top: 450px;
-    font-family: "Montserrat", sans-serif;
+    left: 39%;
+    right: 42.34%;
+    top: 47.94%;
+    bottom: 80.24%;
+}
+
+.title3{
+    position: absolute;
+    left: 36%;
+    right: 8.88%;
+    top: 47.94%;
+    bottom: 80.24%;
+}
+
+.title, .title2, .title3{
+    font-family: Montserrat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 24px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
     text-align: center;
     color: #404099;
-
 }
