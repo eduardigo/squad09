@@ -72,7 +72,7 @@ body {
     border-radius: 2vh;
     display: block;
     width: 150vh;
-    height: 90vh;
+    height: 110vh;
     /* margin: 12vh 41vh; */
     margin: 3vh auto;
 }
@@ -236,6 +236,7 @@ body {
 .estacao-alignment {
     text-align: center;
 }
+
 
 option {
     padding: 5vh;

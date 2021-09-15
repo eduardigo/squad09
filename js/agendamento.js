@@ -70,12 +70,16 @@ function clickAgendar() {
         if (e.target.classList.contains("agendar-clicked") || (e.target.classList.contains("ver-clicked"))) {
             sp.classList.remove("disabled");
             santos.classList.remove("disabled");
-
-
+            if (!cadeiraDisponivel.classList.contains("disabled")) {
+                confirmar.classList.remove("disabled");
+                cancelar.classList.remove("disabled");
+            }
 
         } else {
             sp.classList.add("disabled");
             santos.classList.add("disabled");
+            confirmar.classList.add("disabled");
+            cancelar.classList.add("disabled");
 
             for (var i = 0; i < cadeirasDisponiveis.length; i++) {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
@@ -116,15 +120,15 @@ function clickVerAgendamentos() {
 function clickSantos() {
     unid.addEventListener("click", (e) => {
 
-        if (e.target.classList.contains("unitSantos") && !e.target.classList.contains("unitSantos-clicked")) {
+        if (e.target.classList.contains("unitSantos") && !e.target.classList.contains("unitSantos-clicked") && !e.target.classList.contains("disabled")) {
             sp.classList.remove("unitSP-clicked");
             e.target.classList.toggle("unitSantos-clicked");
         }
-        else {
+        else if (!e.target.classList.contains("disabled")) {
             santos.classList.remove("unitSantos-clicked");
         }
 
-        if (e.target.classList.contains("unitSP-clicked") || (e.target.classList.contains("unitSantos-clicked"))) {
+        if (e.target.classList.contains("unitSP-clicked") || (e.target.classList.contains("unitSantos-clicked") && !e.target.classList.contains("disabled"))) {
             calendario.classList.remove("disabled");
             calendario.classList.remove("disabled");
 
@@ -201,14 +205,17 @@ function selecionaCadeira() {
 }
 
 
-function clickConfirmar() {
+// function clickConfirmar() {
 
-    //  confirmar.addEventListener("click", (e) => {
+//     confirmar.addEventListener("submit", (e) => {
 
+//         e.preventDefault();
 
-    //     });
+//         const data = {}
 
-}
+//     });
+
+// }
 
 
 
