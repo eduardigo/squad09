@@ -1,19 +1,19 @@
-const cadastroForm = document.getElementById('cadastro-formulario');
-const nome = document.getElementById('digitar-nome-cadastro');
-const email = document.getElementById('digitar-email-cadastro');
-const celular = document.getElementById('digitar-celular-cadastro');
-const senha = document.getElementById('digitar-senha-cadastro');
-const confirmarSenha = document.getElementById('confirmar-senha-cadastro');
+const cadastroForm = document.querySelector('.login-form');
+const nome = document.querySelector('.login-input');
+const email = document.querySelector('.email-input');
+const senha = document.querySelector('.senha-input');
+const confirmarSenha = document.querySelector('.senha2-input');
+const confirmar = document.querySelector(".login-submit");
 
 
-if (senha.value == confirmarSenha.value) {
-    cadastroForm.addEventListener('submit', function (e) {
+cadastroForm.addEventListener('submit', function (e) {
 
-        e.preventDefault();
+    e.preventDefault();
+
+    if (senha.value == confirmarSenha.value && nome.value != "" && email.value != "" && senha.value != "" && confirmarSenha.value != "") {
 
         const cadastroData = { name: nome.value, email: email.value, password: senha.value };
 
-        console.log(cadastroData)
         fetch('http://localhost:3000/auth/registro', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
@@ -21,13 +21,20 @@ if (senha.value == confirmarSenha.value) {
         }).then(function (response) {
             console.log(JSON.stringify(cadastroData));
             return response.json();
+        // }).then(function (data) {
+        //     sessionStorage.setItem("token", data.token);
+        }).then(function (){
+            window.location.href = "dashboard.html";
+            }).catch(function (error) {
+                console.log(error);
+            })
 
-        }).catch(function (error) {
-            console.log(error);
-        })
-    });
-} else {
+    }
 
-    confirmarSenha.innerHTML = "As senhas não coincidem!";
+    if (senha.value != confirmarSenha.value) {
 
-}
+        console.log("As senhas não coincidem!");
+    }
+
+});
+

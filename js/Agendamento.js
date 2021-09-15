@@ -28,6 +28,16 @@ const confirmar = document.querySelector(".confirmar");
 
 const cancelar = document.querySelector(".cancelar");
 
+var idSP = "";
+var idSantos = "";
+
+var idLugarDisponivel = [];
+var idLugarOcupado = [];
+var mesaSantos = [];
+var cadeiraSantos = [];
+var dataSantos = [];
+var valueSantos = [];
+
 
 
 //desabilitando botoes
@@ -42,15 +52,24 @@ cancelar.classList.add("disabled");
 for (var i = 0; i < cadeirasDisponiveis.length; i++) {
     var desabilitaCadeiras = cadeirasDisponiveis[i];
     desabilitaCadeiras.classList.add("disabled");
+
 }
 
 
+
+
+
+
+
+
+
+abreSite();
 clickAgendar();
 clickVerAgendamentos();
 clickSP();
 clickSantos();
 selecionaCadeira();
-// clickConfirmar();
+clickConfirmar();
 
 
 
@@ -58,6 +77,11 @@ selecionaCadeira();
 
 function clickAgendar() {
     agendar.addEventListener("click", (e) => {
+
+
+        // console.log(idSP);
+        // console.log(idSantos);
+
 
         if (e.target.classList.contains("agendar") && !e.target.classList.contains("agendar-clicked")) {
             verAgenda.classList.remove("ver-clicked");
@@ -70,13 +94,12 @@ function clickAgendar() {
         if (e.target.classList.contains("agendar-clicked") || (e.target.classList.contains("ver-clicked"))) {
             sp.classList.remove("disabled");
             santos.classList.remove("disabled");
-            if (!cadeiraDisponivel.classList.contains("disabled")) {
-                confirmar.classList.remove("disabled");
-                cancelar.classList.remove("disabled");
-            }
+
 
         } else {
+            sp.classList.remove("unitSP-clicked");
             sp.classList.add("disabled");
+            santos.classList.remove("unitSantos-clicked");
             santos.classList.add("disabled");
             confirmar.classList.add("disabled");
             cancelar.classList.add("disabled");
@@ -84,11 +107,12 @@ function clickAgendar() {
             for (var i = 0; i < cadeirasDisponiveis.length; i++) {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
                 desabilitaCadeiras.classList.add("disabled");
+                desabilitaCadeiras.removeAttribute("id", "selecionada");
             }
-
         }
     });
 }
+
 
 function clickVerAgendamentos() {
     verAgenda.addEventListener("click", (e) => {
@@ -110,16 +134,14 @@ function clickVerAgendamentos() {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
                 desabilitaCadeiras.classList.add("disabled");
             }
-
         }
-
     });
 }
 
 
-function clickSantos() {
-    unid.addEventListener("click", (e) => {
 
+function clickSantos() {
+    santos.addEventListener("click", (e) => {
         if (e.target.classList.contains("unitSantos") && !e.target.classList.contains("unitSantos-clicked") && !e.target.classList.contains("disabled")) {
             sp.classList.remove("unitSP-clicked");
             e.target.classList.toggle("unitSantos-clicked");
@@ -145,11 +167,48 @@ function clickSantos() {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
                 desabilitaCadeiras.classList.add("disabled");
             }
-
         }
 
-    });
+        fetch(`http://localhost:3000/unidade/posto/${idSantos}`, {
+            method: 'GET',
+        }).then(function (response) {
+            return response.json();
+        }).then(function (retorno) {
+            for (var i = 0; i < retorno.posto.length; i++) {
+                mesaSantos[i] = retorno.posto[i].mesa;
+                cadeiraSantos[i] = retorno.posto[i].cadeira;
+                idLugarDisponivel[i] = retorno.posto[i].value;
+                console.log("mesa: " + mesaSantos[i]);
+                console.log("cadeira: " + cadeiraSantos[i]);
+                console.log("value: " + idLugarDisponivel[i]);
+            }
+        });
+
+        fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
+            method: 'GET',
+        }).then(function (response) {
+            return response.json();
+        }).then(function (dados) {
+            if (calendario.value) {
+                for (var i = 0; i < dados.listarAgendamentos.length; i++) {
+                    if (dados.listarAgendamentos[i].unidade === idSantos) {
+                        dataSantos[i] = dados.listarAgendamentos[i].data;
+                        idLugarOcupado[i] = dados.listarAgendamentos[i].value;
+                        // console.log(dados.listarAgendamentos.length);
+                        // console.log(dataSantos[i]);
+                    }
+                }
+            }
+        })
+
+
+    }
+    )
 }
+
+
+
+
 
 
 function clickSP() {
@@ -205,17 +264,17 @@ function selecionaCadeira() {
 }
 
 
-// function clickConfirmar() {
+function clickConfirmar() {
 
-//     confirmar.addEventListener("submit", (e) => {
+    confirmar.addEventListener("submit", (e) => {
 
-//         e.preventDefault();
+        e.preventDefault();
 
-//         const data = {}
+        const data = {}
 
-//     });
+    });
 
-// }
+}
 
 
 
@@ -223,3 +282,22 @@ function clickCancelar() {
 
 }
 
+
+
+
+function abreSite() {
+
+    fetch('http://localhost:3000/unidade', {
+        method: 'GET',
+    }).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        idSP = (data.unidade[0]._id);
+        idSantos = (data.unidade[1]._id);
+
+    }).catch(function (error) {
+        console.log(error);
+    })
+
+
+}

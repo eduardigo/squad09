@@ -81,12 +81,12 @@ p{
     justify-content: center;
 }
 
-.login-input{
-    height: 6vh;
-    width: 50vh;
+.email-input, .password-input{
+    height: 5vh;
+    width: 42vh;
     border-radius: 1vh;
     box-sizing: border-box;
-    padding-left: 5vh;
+    padding-left: 1vh;
     outline: none;
     border: 1px solid rgba(0, 0, 0, 0.329);
 }
@@ -98,19 +98,20 @@ p{
     color: var(--cor6);
 }
 
-.login-submit{
+.login-submit, .create-submit{
     background-color: var(--cor11);
     border: .4vh solid #404099;
     color: var(--cor10);
     background-size: 8vh;
 }
 
-.login-submit:hover{
+.login-submit:hover, .create-submit:hover{
+    cursor: pointer;
     background-color: #404099;
     color: var(--cor11);
 }
 
-.box .login-submit{
+.box .login-submit, .create-submit{
     padding: 1.5vh 1.7vh 1.4vh;
     height: 6vh;
     width: 25vh;

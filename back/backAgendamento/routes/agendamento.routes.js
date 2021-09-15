@@ -4,6 +4,33 @@ const Unidade = require('../models/unidade');
 const Posto = require('../models/posto');
 const Agendamento = require('../models/agendamento');
 
+/* router.get('/:unidadeId', async (req, res) => {
+    try {
+        const { unidadeId } = req.params;
+        const { data } = req.body;
+        let postosOcupados = await Agendamento.find({
+            unidadeId,
+            data,
+        }).select('postoId');
+
+        console.log(postosOcupados);
+               
+
+        const postosDisponiveis = await Posto.find({
+                status: 'D',            
+            }).select('postoId');
+
+        console.log(postosDisponiveis);
+
+        //Como fazer postosDisponiveis - postosOcupados?
+        
+
+    } catch (err) {
+        res.json({ error: true, message: err.message});
+    }
+}) */
+
+
 
 //Rota para criar um agendamento
 router.post('/', async (req, res) => {
@@ -21,6 +48,24 @@ router.post('/', async (req, res) => {
         const agendamento = await new Agendamento(req.body).save();
         res.json({ agendamento });
         }
+    } catch (err) {
+        res.json({ error: true, message: err.message});
+    }
+});
+
+//Rota para listar todos os agendamentos de uma data
+router.get('/dia-exato/:data', async (req, res) => {
+    try {
+        const { data } = req.params;
+        const listarAgendamentos = await Agendamento.find({
+            data,
+        }).select('_id usuarioId unidadeId postoId data');
+        console.log(listarAgendamentos);
+
+        res.json({
+            listarAgendamentos: listarAgendamentos.map(s => ({ usuario: s.usuarioId, unidade: s.unidadeId, posto: s.postoId, data: s.data, value: s._id })),
+        });
+
     } catch (err) {
         res.json({ error: true, message: err.message});
     }
@@ -118,4 +163,4 @@ router.get('/:unidadeId', async (req, res) => {
     } catch (err) {
         res.json({ error: true, message: err.message});
     }
-}); */
+});*/
