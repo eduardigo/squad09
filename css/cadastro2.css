@@ -48,6 +48,8 @@ body{
 }
 
 .login-container{
+    position:absolute;
+    top: 3vh;
     height: 95vh;
     width: 80vh;
     background-color: var(--cor11);
@@ -80,7 +82,7 @@ p{
     justify-content: center;
 }
 
-.login-input{
+.login-input, .email-input, .senha-input, .senha2-input{
     height: 6vh;
     width: 50vh;
     border-radius: 1vh;
@@ -97,18 +99,18 @@ p{
     color: var(--cor6);
 }
 
-.login-submit{
+.login-submit, .cancelar{
     background-color: var(--cor11);
     border: 0.2vh solid #404099;
     color: var(--cor10);       
 }
 
-.login-submit:hover{
+.login-submit:hover, .cancelar:hover{
     background-color: #404099;
     color: var(--cor11);
 }
 
-.box .login-submit{
+.box .login-submit, .cancelar{
     padding: 1.5vh 1.7vh 1.4vh;
     height: 6vh;
     width: 25vh;

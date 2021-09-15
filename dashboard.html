@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-               
-  </head>
-  <body>
 
-    <header>
-      <img src="./imagens/FCalendar.png" alt="logo-app" class="logo">
-      <img src="./imagens/infox.png" alt="info" class="info">
-      <p class="infox">info</p>
-      <img src="./imagens/shape.png" alt="fechar" class="close">
-      <p class="closed">sair</p>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/dashboard.css">
 
-    <div class="container">
-      <h1 id="text">Olá, o que você deseja fazer?</h1>
-      <div class="opcoes">
-        <input type="submit" value="Agendar" class="submit">
-        <input type="submit" value="Ver Agendamento" class="submit">
-      </div>
+</head>
+
+<body>
+
+  <header>
+    <img src="./imagens/FCalendar.png" alt="logo-app" class="logo">
+    <img src="./imagens/infox.png" alt="info" class="info">
+    <p class="infox">info</p>
+    <img src="./imagens/shape.png" alt="fechar" class="close">
+    <p class="closed">sair</p>
+  </header>
+
+  <div class="container">
+    <h1 id="text">Olá, o que você deseja fazer?</h1>
+    <div class="opcoes">
+      <form action="agendamento.html">
+      <input type="submit" value="Agendar" class="agendar">
+      </form>
+      <form action="Agendamento-ver.html">
+      <input type="submit" value="Ver Agendamento" class="verAgendamento">
+    </form>
     </div>
+  </div>
 
-    
-    
+
+
 
 </body>
-<script src="js/principal.js"></script>
+<script src="js/dashboard.js"></script>
+
 </html>

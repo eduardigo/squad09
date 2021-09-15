@@ -237,7 +237,6 @@ body {
     text-align: center;
 }
 
-
 option {
     padding: 5vh;
 }
@@ -254,7 +253,7 @@ h5 {
     text-align: center;
 }
 
-.disponivel {
+.cadeira {
     transition: 0.2s;
     flex: 0 1 calc(20% - 8px);
     padding: 1vh;
@@ -269,13 +268,8 @@ h5 {
 }
 
 .bloqueada {
-    flex: 0 1 calc(20% - 8px);
-    padding: 1vh;
-    border-radius: 1vh;
-    margin: 0.5vh;
     border: .5vh solid #E1E1E1;
     color: black;
-    font-family: 'Montserrat', sans-serif;
     width: 117px;
     height: 47px;
 }
@@ -300,25 +294,7 @@ h5 {
 
 /* CADEIRAS DISPONIVEIS */
 
-.cadeira-flex input:nth-child(1) {
-    border: 0.4vh solid black;
-    color: black;
-    background-color: #EFEFEF;
-}
-
-.cadeira-flex input:nth-child(5) {
-    border: 0.4vh solid black;
-    color: black;
-    background-color: #EFEFEF;
-}
-
-.cadeira-flex2 input:nth-child(4) {
-    border: 0.4vh solid black;
-    color: black;
-    background-color: #EFEFEF;
-}
-
-.cadeira-flex2 input:nth-child(2) {
+.cadeira-flex input:not(.ocupada):nth-child(1), .cadeira-flex input:not(.ocupada):nth-child(5), .cadeira-flex2 input:not(.ocupada):nth-child(4), .cadeira-flex2 input:not(.ocupada):nth-child(2) {
     border: 0.4vh solid black;
     color: black;
     background-color: #EFEFEF;
@@ -329,19 +305,17 @@ h5 {
 #selecionada, #selecionada:hover {
     border: 0.4vh solid #1C1C56;
     background-color: #1C1C56;
-    flex: 0 1 calc(20% - 8px);
-    padding: 1vh;
-    border-radius: 1vh;
-    margin: 0.5vh;
     color: white;
-    font-family: 'Montserrat', sans-serif;
-    width: 117px;
-    height: 47px;
 }
 
 /* CADEIRAS JA SELECIONADAS */
 
-.ocupada, .ocupada:hover {}
+.ocupada, .ocupada:hover {
+    background-color: #FF662E;
+    color: black;
+    /* border: .5vh solid #404099; */
+    border: none;
+}
 
 .cancelar {
     font-family: 'Montserrat', sans-serif;
