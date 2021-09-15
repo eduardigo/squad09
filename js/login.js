@@ -1,7 +1,6 @@
-const loginForm = document.getElementById('login-formulario');
-const email = document.getElementById('digitar-email');
-const password = document.getElementById('digitar-senha');
-
+const loginForm = document.querySelector('#formLogar');
+const email = document.querySelector('.email-input');
+const password = document.querySelector('.password-input');
 
 
 // ação disparada ao apertar o botão de login 
@@ -34,7 +33,7 @@ loginForm.addEventListener('submit', function (e) {
         sessionStorage.setItem("token", data.token)
         console.log(JSON.stringify(data.token));
         // troca de pagina
-        window.location.href = "index.html";
+        window.location.href = "dashboard.html";
 
 
     }).catch(function (error) {

@@ -31,9 +31,12 @@ const cancelar = document.querySelector(".cancelar");
 var idSP = "";
 var idSantos = "";
 
-var mesa = [];
-var cadeira = [];
-var data = null;
+var idLugarDisponivel = [];
+var idLugarOcupado = [];
+var mesaSantos = [];
+var cadeiraSantos = [];
+var dataSantos = [];
+var valueSantos = [];
 
 
 
@@ -76,8 +79,8 @@ function clickAgendar() {
     agendar.addEventListener("click", (e) => {
 
 
-        console.log(idSP);
-        console.log(idSantos);
+        // console.log(idSP);
+        // console.log(idSantos);
 
 
         if (e.target.classList.contains("agendar") && !e.target.classList.contains("agendar-clicked")) {
@@ -171,13 +174,34 @@ function clickSantos() {
         }).then(function (response) {
             return response.json();
         }).then(function (retorno) {
-            for(var i = 0; i < retorno.posto.length; i++){
-            mesa[i] = retorno.posto[i].mesa;
-            cadeira[i] = retorno.posto[i].cadeira;
-            console.log("mesa: " + mesa[i]);
-            console.log("cadeira: " + cadeira[i]);
+            for (var i = 0; i < retorno.posto.length; i++) {
+                mesaSantos[i] = retorno.posto[i].mesa;
+                cadeiraSantos[i] = retorno.posto[i].cadeira;
+                idLugarDisponivel[i] = retorno.posto[i].value;
+                console.log("mesa: " + mesaSantos[i]);
+                console.log("cadeira: " + cadeiraSantos[i]);
+                console.log("value: " + idLugarDisponivel[i]);
+            }
+        });
+
+        fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
+            method: 'GET',
+        }).then(function (response) {
+            return response.json();
+        }).then(function (dados) {
+            if (calendario.value) {
+                for (var i = 0; i < dados.listarAgendamentos.length; i++) {
+                    if (dados.listarAgendamentos[i].unidade === idSantos) {
+                        dataSantos[i] = dados.listarAgendamentos[i].data;
+                        idLugarOcupado[i] = dados.listarAgendamentos[i].value;
+                        // console.log(dados.listarAgendamentos.length);
+                        // console.log(dataSantos[i]);
+                    }
+                }
             }
         })
+
+
     }
     )
 }
