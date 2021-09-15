@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
 });
 
 //Rota para listar todos os agendamentos de uma data
-router.get('/:data', async (req, res) => {
+router.get('/dia-exato/:data', async (req, res) => {
     try {
         const { data } = req.params;
         const listarAgendamentos = await Agendamento.find({
