@@ -38,7 +38,7 @@ body{
     min-width: 33vh;
     max-height: 111vh;
     margin: auto;
-    height: 81vh;
+    height: 95vh;
     background-color: var(--cor11);
     display: flex;
     justify-content: center;
@@ -57,7 +57,7 @@ body{
     align-items: center;
     border: 2px solid #FF4500;
     box-sizing: border-box;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -88,18 +88,19 @@ p{
     box-sizing: border-box;
     padding-left: 5vh;
     outline: none;
-    border: .5vh solid #404099;
+    border: 1px solid rgba(0, 0, 0, 0.329);
 }
 
 .login-reset{
     margin: .5vh;
     display: flex;
     font-size: 2vh;
+    color: var(--cor6);
 }
 
 .login-submit{
     background-color: var(--cor11);
-    border: .6vh solid #404099;
+    border: .4vh solid #404099;
     color: var(--cor10);
     background-size: 8vh;
 }
@@ -117,27 +118,6 @@ p{
     font-family:'Montserrat', sans-serif;
     background-size: 8vh;
     border-radius: 1.5vh; 
-}
-
-.rodape{
-    width: 100%;
-    background-color: var(--cor9);
-    height: 22vh;
-    
-}
-
-#logo1{
-  width: 200px;
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 10px;
-}
-
-.copyright{
-    font-size: 10px;
-    text-align: center;
-    color: var(--cor11);
-    padding-bottom: 10px;
 }
 
 @media (max-width: 600px){

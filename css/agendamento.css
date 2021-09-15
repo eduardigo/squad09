@@ -28,8 +28,42 @@ body {
 
 .foto{
     width: 36vh;
-    height: 14vh;
+    height: 12vh;
     margin-left: 20vh;
+}
+
+.info{
+    position: absolute;
+    left: 85%;
+    right: 16.67%;
+    top: 3%;
+    bottom: 16.67%;
+}
+
+.infox{
+    position: absolute;
+    left: 84.8%;
+    top: 6%;
+    color: var(--cor10);
+    font-family: 'Montsserat', sans-serif;
+    font-size: 2.5vh;
+}
+
+.close{
+    position: absolute;
+    left: 90%;
+    right: 16.67%;
+    top: 3%;
+    bottom: 16.67%;
+}
+
+.closed{
+    position: absolute;
+    left: 89.9%;
+    top: 6%;
+    color: var(--cor10);
+    font-family: 'Montsserat', sans-serif;
+    font-size: 2.5vh;
 }
 
 

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/*font-family: 'Montserrat', sans-serif;
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+}
+
+:root {
+    --cor0: rgb(254, 68, 0);/*Laranja Fcamara*/
+    --cor1: #FC4300;
+    --cor2: #FC6027;
+    --cor3: #EF653C;
+    --cor4: #090909;
+    --cor5: #303033;
+    --cor6: #333333;
+    --cor7: #333333d3;
+    --cor8: #36357e; /*Azul Fcamara*/
+    --cor9: #414099;
+    --cor10: #404099;
+    --cor11: #FFFFFF;
+}
+
+.shap1{
+    position: absolute;
+    left: 88%;
+    top: 5%;
+    bottom: 20.83%;
+    border: 1.5px solid #001A72;
+}
+
+.titulo{
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    width: 980px;
+    height: 28px;
+    left: 144px;
+    top: 60px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--cor9);
+}
+
+.container{
+    display: blocks;
+    flex-direction: flex;
+}
+
+.box1{
+    position: absolute;
+    width: 317px;
+    height: 386px;
+    left: 144px;
+    top: 130px;
+    border: 1px solid var(--cor8);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.box2{
+    position: absolute;
+    width: 317px;
+    height: 386px;
+    left: 482px;
+    top: 130px;
+    border: 1px solid var(--cor8);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.box3{
+    position: absolute;
+    width: 317px;
+    height: 386px;
+    left: 819px;
+    top: 130px;
+    border: 1px solid var(--cor8);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.shap2{
+    position: absolute;
+    left: 36.61%;
+    top: 27.83%;
+    bottom: 40%;
+}
+
+.shap3{
+    position: absolute;
+    left: 43.19%;
+    top: 26.31%;
+    bottom: 40%;
+}
+
+.shap4{
+    position: absolute;
+    left: 53.86%;
+    top: 27.83%;
+    bottom: 40%;
+}
+
+.title1{
+    position: absolute;
+    width: 317px;
+    height: 22px;
+    top: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--cor10);
+}
+
+.text1{
+    position: absolute;
+    width: 276px;
+    height: 93px;
+    left: 20px;
+    top: 240px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: var(--cor6);
+}
+
+.shap5{
+    position: absolute;
+    left: 43.19%;
+    top: 28.31%;
+    bottom: 60%;
+}
+
+.shap6{
+    position: absolute;
+    left: 54%;
+    top: 27%;
+    bottom: 63.47%;
+}
+
+.title2{
+    position: absolute;
+    width: 318px;
+    height: 22px;
+    top: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--cor10);
+}
+
+.text2{
+    position: absolute;
+    width: 276px;
+    height: 93px;
+    left: 20px;
+    top: 240px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: var(--cor6);
+}
+
+.shap7{
+    position: absolute;
+    left: 42%;
+    top: 27%;
+    bottom: 60%;
+}
+
+.shap8{
+    position: absolute;
+    left: 53%;
+    top: 28%;
+    bottom: 62.78%;
+}
+
+.title3{
+    position: absolute;
+    width: 317px;
+    height: 22px;
+    top: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    color: var(--cor10);
+}
+
+.text3{
+    position: absolute;
+    width: 276px;
+    height: 93px;
+    left: 20px;
+    top: 240px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    color: var(--cor6);
+}
+
+.submit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 17px 16px;
+    position: absolute;
+    width: 317px;
+    height: 56px;
+    left: 482px;
+    top: 550px;
+    padding: 0.5vh;
+    border-radius: 0.4rem;
+    font-size: 2.5vh;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0.3vh 1vh;
+    color: var(--cor11);
+    background-color: var(--cor8);
+}
+
+.submit:hover{
+    background-color: var(--cor11);
+    color: var(--cor8);
+}
+
+
+

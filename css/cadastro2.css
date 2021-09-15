@@ -87,17 +87,19 @@ p{
     box-sizing: border-box;
     padding-left: 2vh;
     outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.329);
 }
 
 .login-conta{
     margin: 1vh;
     display: flex;
     font-size: 2vh;
+    color: var(--cor6);
 }
 
 .login-submit{
     background-color: var(--cor11);
-    border: 0.5vh solid #404099;
+    border: 0.2vh solid #404099;
     color: var(--cor10);       
 }
 
@@ -116,25 +118,4 @@ p{
     border-radius: 1.5vh; 
     
 }
-
-.rodape{
-    background-color: var(--cor9);
-    width: 100%;
-    height: 21vh;
-
-}
-
-#logo1{
-  width: 20vh;
-  padding: 4vh;
-}
-
-.copyright{
-    font-size: 2vh;
-    text-align: center;
-    color: var(--cor11);
-    padding-bottom: 1vh;
-}
-
-
 
