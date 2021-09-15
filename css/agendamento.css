@@ -26,13 +26,13 @@ body {
     background-color: var(--cor11);
 }
 
-.foto{
+.foto {
     width: 36vh;
     height: 12vh;
     margin-left: 20vh;
 }
 
-.info{
+.info {
     position: absolute;
     left: 85%;
     right: 16.67%;
@@ -40,7 +40,7 @@ body {
     bottom: 16.67%;
 }
 
-.infox{
+.infox {
     position: absolute;
     left: 84.8%;
     top: 6%;
@@ -49,7 +49,7 @@ body {
     font-size: 2.5vh;
 }
 
-.close{
+.close {
     position: absolute;
     left: 90%;
     right: 16.67%;
@@ -57,7 +57,7 @@ body {
     bottom: 16.67%;
 }
 
-.closed{
+.closed {
     position: absolute;
     left: 89.9%;
     top: 6%;
@@ -66,20 +66,16 @@ body {
     font-size: 2.5vh;
 }
 
-
-
 .container {
     background-color: var(--cor11);
     border: 0.5vh solid var(--cor10);
     border-radius: 2vh;
     display: block;
     width: 150vh;
-    height: 90vh;
+    height: 110vh;
     /* margin: 12vh 41vh; */
     margin: 3vh auto;
 }
-
-
 
 #text {
     padding: 3vh;
@@ -110,7 +106,7 @@ body {
     background-color: var(--cor11);
 }
 
-.agendar:hover, .ver-agenda:hover{
+.agendar:hover, .ver-agenda:hover {
     transition: 0.2s;
     cursor: pointer;
     background-color: #404099;
@@ -134,8 +130,6 @@ body {
     color: white;
     border: 0.4vh solid #1C1C56;
 }
-
-
 
 .box {
     display: flex;
@@ -167,8 +161,6 @@ body {
     /* text-align: center; */
 }
 
-
-
 .unitSantos {
     padding: 1.5vh;
     border-radius: 0.7rem;
@@ -189,12 +181,11 @@ body {
 
 .unitSP:hover, .unitSantos:hover {
     transition: 0.2s;
-    cursor:pointer;
+    cursor: pointer;
     border: 0.4vh solid #404099;
     color: var(--cor11);
     background-color: #404099;
 }
-
 
 .unitSP-clicked, .unitSantos-clicked, .unitSP-clicked:hover, .unitSantos-clicked:hover {
     /* filter:brightness(0.8); */
@@ -203,8 +194,6 @@ body {
     color: var(--cor11);
     background-color: #1C1C56;
 }
-
-
 
 .form {
     padding: 2vh;
@@ -248,6 +237,7 @@ body {
     text-align: center;
 }
 
+
 option {
     padding: 5vh;
 }
@@ -284,18 +274,16 @@ h5 {
     border-radius: 1vh;
     margin: 0.5vh;
     border: .5vh solid #E1E1E1;
-    /* background-color: white; */
-    color: #404099;
+    color: black;
     font-family: 'Montserrat', sans-serif;
     width: 117px;
     height: 47px;
 }
 
-.cad-flex{
+.cad-flex {
     margin: 5vh;
     width: 100vh;
 }
-
 
 .cadeira-flex, .cadeira-flex2 {
     margin-left: 2vh;
@@ -306,21 +294,11 @@ h5 {
 }
 
 .disponivel:hover {
-cursor: pointer;    
-filter: brightness(1.2);
+    cursor: pointer;
+    filter: brightness(1.2);
 }
-
-.bloqueada {
-    background-image: url(../imagens/Cadeira\ bloqueada.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    /* padding-<left|right>: <width of image>px; */
-
-}
-
 
 /* CADEIRAS DISPONIVEIS */
-
 
 .cadeira-flex input:nth-child(1) {
     border: 0.4vh solid black;
@@ -348,14 +326,14 @@ filter: brightness(1.2);
 
 /* CADEIRAS SELECIONADAS */
 
-.selecionada, .selecionada:hover  {
+#selecionada, #selecionada:hover {
     border: 0.4vh solid #1C1C56;
     background-color: #1C1C56;
     flex: 0 1 calc(20% - 8px);
     padding: 1vh;
     border-radius: 1vh;
     margin: 0.5vh;
-    color: #404099;
+    color: white;
     font-family: 'Montserrat', sans-serif;
     width: 117px;
     height: 47px;
@@ -363,6 +341,55 @@ filter: brightness(1.2);
 
 /* CADEIRAS JA SELECIONADAS */
 
-.ocupada, .ocupada:hover {
+.ocupada, .ocupada:hover {}
 
+.cancelar {
+    font-family: 'Montserrat', sans-serif;
+    width: 233px;
+    height: 49px;
+    text-align: center;
+    margin: 12% 10% 10% 4%;
+    padding: 14px, 16px, 13px, 16px;
+    border: 0.2vh solid black;
+    border-radius: 0.7rem;
+    font-size: 3vh;
+    background-color: var(--cor11);
+}
+
+.cancelar:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: #404099;
+    color: white;
+}
+
+.confirmar {
+    font-family: 'Montserrat', sans-serif;
+    width: 233px;
+    height: 49px;
+    text-align: center;
+    margin: 12% 10% 10% -7%;
+    padding: 14px, 16px, 13px, 16px;
+    border: 0.2vh solid black;
+    border-radius: 0.7rem;
+    font-size: 3vh;
+    background-color: var(--cor11);
+}
+
+/* .confirmado {
+    transition: 0.2s;
+    transform: scale(0.9);
+    background-color: green;
+} */
+
+.confirmar:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: #404099;
+    color: white;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.3;
 }
