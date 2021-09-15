@@ -80,7 +80,7 @@
     text-align: center;   
 }
 
-.submit{
+.agendar, .verAgendamento{
     border-radius: 0.4rem;
     border: 0.5vh solid var(--cor10);
     font-size: 2.5vh;
@@ -90,11 +90,18 @@
     background-color: var(--cor11);
 }
 
-.submit:nth-child(1){
+/* .agendarlink {
+    width: 44vh;
+    height: 10vh; 
+    border-radius: 0.4rem;
+    border: 0.5vh solid white
+} */
+
+.agendar:nth-child(1), .verAgendamento:nth-child(1){
     margin-right: 5vh;
 }
 
-.submit:hover{
+.agendar:hover, .verAgendamento:hover{
     color: var(--cor11);
     background-color: var(--cor10);
 }
