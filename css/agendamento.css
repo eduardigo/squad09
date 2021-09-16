@@ -302,19 +302,20 @@ h5 {
 
 /* CADEIRAS SELECIONADAS */
 
-#selecionada, #selecionada:hover {
-    border: 0.4vh solid #1C1C56;
-    background-color: #1C1C56;
-    color: white;
+.selecionada, .selecionada:hover {
+    border: 0.4vh solid #1C1C56 !important;
+    background-color: #1C1C56 !important;
+    color: white !important;
 }
 
 /* CADEIRAS JA SELECIONADAS */
 
 .ocupada, .ocupada:hover {
-    background-color: #FF662E;
-    color: black;
+    background-color: #FF662E !important;
+    color: black !important;
     /* border: .5vh solid #404099; */
-    border: none;
+    border: none !important;
+    pointer-events: none;
 }
 
 .cancelar {

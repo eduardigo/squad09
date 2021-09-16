@@ -16,6 +16,8 @@ const spClicked = document.querySelector(".unitSP-Clicked");
 
 const cadDiv = document.querySelector(".cad-flex")
 
+const cadeiras = document.querySelectorAll(".cadeira");
+
 const cadeiraDisponivel = document.querySelector(".disponivel");
 
 const cadeirasDisponiveis = document.querySelectorAll(".disponivel");
@@ -70,7 +72,7 @@ clickSP();
 clickSantos();
 selecionaCadeira();
 clickConfirmar();
-
+clickCancelar();
 
 
 
@@ -107,7 +109,7 @@ function clickAgendar() {
             for (var i = 0; i < cadeirasDisponiveis.length; i++) {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
                 desabilitaCadeiras.classList.add("disabled");
-                desabilitaCadeiras.removeAttribute("id", "selecionada");
+                desabilitaCadeiras.classList.remove("selecionada");
             }
         }
     });
@@ -175,13 +177,23 @@ function clickSantos() {
             return response.json();
         }).then(function (retorno) {
             for (var i = 0; i < retorno.posto.length; i++) {
+
                 mesaSantos[i] = retorno.posto[i].mesa;
                 cadeiraSantos[i] = retorno.posto[i].cadeira;
                 idLugarDisponivel[i] = retorno.posto[i].value;
-                console.log("mesa: " + mesaSantos[i]);
-                console.log("cadeira: " + cadeiraSantos[i]);
-                console.log("value: " + idLugarDisponivel[i]);
+
+                cadeirasDisponiveis[i].setAttribute("id", retorno.posto[i].value);
+                console.log(cadeirasDisponiveis[i]);
+                // console.log("mesa: " + mesaSantos[i]);
+                // console.log("cadeira: " + cadeiraSantos[i]);
+                // console.log("value: " + idLugarDisponivel[i]);
             }
+            // for (var j = 0; j < cadeirasDisponiveis.length; j++) {
+            //     if (!cadeirasDisponiveis[j].getAttribute("id")) {
+            //         cadeirasDisponiveis[j].classList.remove("disponivel");
+            //         cadeirasDisponiveis[j].classList.add("ocupada");
+            //     }
+            // }
         });
 
         fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
@@ -190,20 +202,31 @@ function clickSantos() {
             return response.json();
         }).then(function (dados) {
             if (calendario.value) {
+                for (var i = 0; i<cadeiras.length; i++){
+                    cadeiras[i].classList.add("disponivel");
+                    cadeiras[i].classList.remove("ocupada");
+                }
                 for (var i = 0; i < dados.listarAgendamentos.length; i++) {
                     if (dados.listarAgendamentos[i].unidade === idSantos) {
-                        dataSantos[i] = dados.listarAgendamentos[i].data;
-                        idLugarOcupado[i] = dados.listarAgendamentos[i].value;
+                        // dataSantos[i] = dados.listarAgendamentos[i].data;
+                        // console.log(dados);
+                        idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
                         // console.log(dados.listarAgendamentos.length);
                         // console.log(dataSantos[i]);
-                        console.log(idLugarOcupado[i]);
+                        // console.log(idLugarOcupado[i]);
+
+
+                        for (var j = 0; j < cadeirasDisponiveis.length; j++) {
+                            if (cadeirasDisponiveis[i].getAttribute("id") == idLugarOcupado[j]) {
+                                cadeirasDisponiveis[j].classList.remove("disponivel");
+                                cadeirasDisponiveis[j].classList.add("ocupada");
+                                console.log("oi");
+                            }
+                        }
                     }
-                    
                 }
             }
         })
-
-
     }
     )
 }
@@ -249,19 +272,19 @@ function clickSP() {
 function selecionaCadeira() {
     cadDiv.addEventListener("click", (e) => {
 
-        if (e.target.classList.contains("disponivel") && e.target.getAttribute("id") != ("selecionada") && !e.target.classList.contains("bloqueada")) {
-            const cadeiraSelecionada = document.getElementById("selecionada");
+        if (e.target.classList.contains("disponivel") && !e.target.classList.contains("selecionada") && !e.target.classList.contains("bloqueada")) {
+            const cadeiraSelecionada = document.querySelector(".selecionada");
             if (cadeiraSelecionada) {
-                cadeiraSelecionada.removeAttribute("id", "selecionada");
+                cadeiraSelecionada.classList.remove("selecionada");
             }
-            e.target.setAttribute('id', 'selecionada');
-            confirmar.classList.remove("disabled");
-            cancelar.classList.remove("disabled");
-        } else if (!e.target.classList.contains("bloqueada")) {
-            confirmar.classList.add("disabled");
-            cancelar.classList.add("disabled");
-            e.target.removeAttribute("id", "selecionada");
+
+            if (!e.target.classList.contains("ocupada") && !e.target.classList.contains("bloqueada")) {
+                e.target.classList.toggle("selecionada");
+                confirmar.classList.remove("disabled");
+                cancelar.classList.remove("disabled");
+            }
         }
+
     });
 }
 
@@ -281,6 +304,14 @@ function clickConfirmar() {
 
 
 function clickCancelar() {
+    cancelar.addEventListener("click", (e) => {
+        const cadeiraSelecionada = document.querySelector(".selecionada");
+        if (cadeiraSelecionada) {
+            cadeiraSelecionada.classList.remove("selecionada");
+        }
+
+
+    });
 
 }
 
