@@ -5,7 +5,6 @@ const resetPassword = document.querySelector('.login-reset');
 
 var userID = "";
 
-
 // ação disparada ao apertar o botão de login 
 loginForm.addEventListener('submit', function (e) {
     //impede a página de apagar os valores do form/recarregar a página
@@ -40,7 +39,7 @@ loginForm.addEventListener('submit', function (e) {
         sessionStorage.setItem("token", data.token)
         console.log(JSON.stringify(data.token));
         // troca de pagina
-        // window.location.href = "dashboard.html";
+        window.location.href = "agendamento.html";
 
 
     }).catch(function (error) {

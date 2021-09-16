@@ -26,6 +26,8 @@ const cadeirasDisponiveis = document.querySelectorAll(".disponivel");
 
 const cadeiraOcupada = document.querySelector(".ocupada");
 
+var cadeiraSelecionada = document.querySelector(".selecionada");
+
 const calendario = document.querySelector(".data");
 
 const confirmarData = document.querySelector(".confirmarData");
@@ -36,6 +38,7 @@ const cancelar = document.querySelector(".cancelar");
 
 var idSP = "";
 var idSantos = "";
+var idUnidadeAtual = "";
 
 var idLugarDisponivel = [];
 var idLugarOcupado = [];
@@ -49,6 +52,10 @@ var mesaSP = [];
 var cadeiraSP = [];
 var dataSP = [];
 var valueSP = [];
+
+
+
+var userID = sessionStorage.getItem("userID");
 
 
 //desabilitando botoes
@@ -73,7 +80,7 @@ for (var i = 0; i < cadeirasDisponiveis.length; i++) {
 
 
 
-
+console.log(userID);
 
 abreSite();
 clickAgendar();
@@ -147,6 +154,27 @@ function clickVerAgendamentos() {
                 desabilitaCadeiras.classList.add("disabled");
             }
         }
+
+
+        fetch(`http://localhost:3000/agendamento/${userID}`, {
+
+            method: 'get',
+        }).then(function (response) {
+
+            return response.json();
+
+        }).then(function (dados) {
+            for (var i = 0; i < dados.listarAgendamentos.length; i++) {
+                console.log(JSON.stringify(dados.listarAgendamentos[i].unidade));
+                console.log(JSON.stringify(dados.listarAgendamentos[i].posto));
+                console.log(JSON.stringify(dados.listarAgendamentos[i].data));
+                console.log(JSON.stringify(dados.listarAgendamentos[i].value));
+                console.log("-------------");
+            }   
+        })
+
+
+
     });
 }
 
@@ -385,7 +413,7 @@ function selecionaCadeira() {
     cadDiv.addEventListener("click", (e) => {
 
         if (e.target.classList.contains("disponivel") && !e.target.classList.contains("selecionada") && !e.target.classList.contains("bloqueada")) {
-            const cadeiraSelecionada = document.querySelector(".selecionada");
+            cadeiraSelecionada = document.querySelector(".selecionada");
             if (cadeiraSelecionada) {
                 cadeiraSelecionada.classList.remove("selecionada");
             }
@@ -403,21 +431,39 @@ function selecionaCadeira() {
 
 function clickConfirmar() {
 
-    confirmar.addEventListener("submit", (e) => {
+    confirmar.addEventListener("click", (e) => {
 
         e.preventDefault();
 
-        const data = {}
+        cadeiraSelecionada = document.querySelector(".selecionada");
+
+        // var recebeID = cadeiraSelecionada.getAttribute("id", "selecionada");
+
+        idUnidadeAtual = cadeiraSelecionada.id;
+
+        const dadosAgendar = { userID, idUnidadeAtual, cadeiraSelecionada: cadeiraSelecionada.id, calendario: calendario.value }
+
+        fetch('http://localhost:3000/agendamento', {
+            method: 'post',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userID, idUnidadeAtual, cadeiraSelecionada: cadeiraSelecionada.id, calendario: calendario.value })
+        }).then(function (response) {
+            // console.log(JSON.stringify(dadosAgendar));
+            return response.json();
+        }).then(function (dados) {
+            console.log(dados);
+            // window.location.href = "dashboard.html";
+        }).catch(function (error) {
+            console.log(error);
+        })
 
     });
 
 }
 
-
-
 function clickCancelar() {
     cancelar.addEventListener("click", (e) => {
-        const cadeiraSelecionada = document.querySelector(".selecionada");
+        cadeiraSelecionada = document.querySelector(".selecionada");
         cadeiraSelecionada.classList.remove("selecionada");
 
 
@@ -441,6 +487,5 @@ function abreSite() {
     }).catch(function (error) {
         console.log(error);
     })
-
 
 }
