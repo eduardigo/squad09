@@ -196,7 +196,9 @@ function clickSantos() {
                         idLugarOcupado[i] = dados.listarAgendamentos[i].value;
                         // console.log(dados.listarAgendamentos.length);
                         // console.log(dataSantos[i]);
+                        console.log(idLugarOcupado[i]);
                     }
+                    
                 }
             }
         })

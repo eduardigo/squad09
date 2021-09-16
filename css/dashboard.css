@@ -102,6 +102,7 @@
 }
 
 .agendar:hover, .verAgendamento:hover{
+    cursor: pointer;
     color: var(--cor11);
     background-color: var(--cor10);
 }
