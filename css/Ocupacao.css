@@ -144,3 +144,131 @@
     text-align: center;
     color: #404099;
 }
+
+hr{
+    position: absolute;
+    left: 30.03%;
+    right: 30.91%;
+    top: 55%;
+    bottom: 72.95%;
+    border: 1px solid #A0A0A0;
+}
+
+#line2{
+    position: absolute;
+    left: 30.03%;
+    right: 30.91%;
+    top: 68%;
+    bottom: 49.85%;
+    border: 1px solid #A0A0A0;
+}
+
+#line3{
+    position: absolute;
+    left: 30.03%;
+    right: 30.91%;
+    top: 81%;
+    bottom: 26.75%;
+    border: 1px solid #A0A0A0;
+}
+
+#date{
+    position: absolute;
+    left: 33%;
+    right: 77.25%;
+    top: 60.56%;
+    bottom: 58.36%;
+}
+
+#date1{
+    position: absolute;
+    left: 33%;
+    right: 77.25%;
+    top: 73%;
+    bottom: 35.26%;
+}
+
+#date2{
+    position: absolute;
+    left: 33%;
+    right: 77.25%;
+    top: 86%;
+    bottom: 12.16%;
+}
+
+#date, #date1, #date2{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #555555;
+}
+
+.ocup{
+    position: absolute;
+    left: 45%;
+    right: 45.16%;
+    top: 60.39%;
+    bottom: 28.43%;
+}
+
+.ocup1{
+    position: absolute;
+    left: 45.08%;
+    right: 45.16%;
+    top: 73%;
+    bottom: 20.15%;
+}
+
+.ocup2{
+    position: absolute;
+    left: 45%;
+    right: 45.16%;
+    top: 86%;
+    bottom: 12.31%;
+}
+
+.ocup, .ocup1, .ocup2{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #555555;
+}
+
+.cancel{
+    position: absolute;
+    left: 61%;
+    right: 9.37%;
+    top: 59%;
+    bottom: 57.14%;
+}
+
+.cancel2{
+    position: absolute;
+    left: 61%;
+    right: 9.37%;
+    top: 71%;
+    bottom: 34.04%;
+}
+
+.cancel3{
+    position: absolute;
+    left: 61.1%;
+    right: 9.37%;
+    top: 84%;
+    bottom: 34.04%;
+}
+
+.cancel, .cancel2, .cancel3{
+    background-color: #404099;
+    color: white;
+    padding: 2vh vh;
+    border-radius: 2vh;
+    width: 15vh;
+    height: 6vh;
+}

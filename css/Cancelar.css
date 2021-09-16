@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/*font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+}
+
+:root {
+    --cor0: rgb(254, 68, 0);/*Laranja Fcamara*/
+    --cor1: #FC4300;
+    --cor2: #FC6027;
+    --cor3: #EF653C;
+    --cor4: #090909;
+    --cor5: #303033;
+    --cor6: #333333;
+    --cor7: #333333d3;
+    --cor8: #36357e; /*Azul Fcamara*/
+    --cor9: #414099;
+    --cor10: #404099;
+    --cor11: #FFFFFF;
+}
+
+.logo{
+    width: 36vh;
+    height: 12vh;
+    margin-left: 20vh;
+}
+
+
+
+.close{
+    position: absolute;
+    left: 90%;
+    right: 20.83%;
+    top: 5.83%;
+    bottom: 20.83%;
+}
+
+
+.container{
+    margin: auto;
+    width: 100vh;
+}
+
+.opcoes{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+#text{
+    font-family: 'Montserrat', sans-serif;
+    color: var(--cor10);
+    font-size: 5vh;
+    margin-bottom: 8vh;
+    margin-top: 25vh;
+    text-align: center;   
+}
+
+.submit{
+    border-radius: 0.4rem;
+    border: 0.5vh solid var(--cor10);
+    font-size: 2.5vh;
+    font-family: 'Montserrat', sans-serif;
+    width: 40vh;
+    height: 10vh;
+    background-color: var(--cor11);
+}
+
+.submit:nth-child(1){
+    margin-right: 5vh;
+}
+
+.submit:hover{
+    color: var(--cor11);
+    background-color: var(--cor10);
+}
+

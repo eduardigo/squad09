@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+/*font-family: 'Montserrat', sans-serif;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+}
+
+:root {
+    --cor0: rgb(254, 68, 0);/*Laranja Fcamara*/
+    --cor1: #FC4300;
+    --cor2: #FC6027;
+    --cor3: #EF653C;
+    --cor4: #090909;
+    --cor5: #303033;
+    --cor6: #333333;
+    --cor7: #333333d3;
+    --cor8: #36357e; /*Azul Fcamara*/
+    --cor9: #414099;
+    --cor10: #404099;
+    --cor11: #FFFFFF;
+}
+
+img{
+    position: absolute;
+    left: 90%;
+    right: 20.83%;
+    top: 7%;
+    bottom: 20.83%;
+}
+
+.container{
+    position: absolute;
+    width: 600px;
+    height: 280px;
+    left: 374px;
+    top: 200px;
+    border: 0.6vh solid #404099;
+    border-radius: 2vh;
+}
+
+.text{
+    top: 110px;
+    left: 500px;
+    position: absolute;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #000000;
+}
+
+.box{
+    display: flex;
+    position: absolute;
+    width: 238px;
+    height: 20px;
+    left: 110px;
+    top: 90px;
+}
+
+.box1{
+    display: flex;
+    position: absolute;
+    width: 238px;
+    height: 20px;
+    left: 110px;
+    top: 130px;
+}
+
+.box2{
+    display: flex;
+    position: absolute;
+    width: 416px;
+    height: 20px;
+    left: 110px;
+    top: 170px;
+}
+
+.text1{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.text2{
+    color: var(--cor8);
+    position: absolute;
+    width: 238px;
+    height: 20px;
+    left: 200px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+}
