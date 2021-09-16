@@ -296,7 +296,6 @@ function clickSP() {
                     }
                 }
                 console.log("teste");
-                console.log(idSP);
                 for (var i = 0; i < dados.listarAgendamentos.length; i++) {
                     if (dados.listarAgendamentos[i].unidade === idSP) {
                         idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
