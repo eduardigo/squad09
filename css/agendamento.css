@@ -368,3 +368,10 @@ h5 {
     pointer-events: none;
     opacity: 0.3;
 }
+
+@media (max-width: 600px;){
+    .container{
+        width: 70%;
+    }
+    
+}
