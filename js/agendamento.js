@@ -158,8 +158,18 @@ function clickSantos() {
             sp.classList.remove("unitSP-clicked");
             e.target.classList.toggle("unitSantos-clicked");
         }
-        else if (!e.target.classList.contains("disabled")) {
+        else {
             santos.classList.remove("unitSantos-clicked");
+
+            for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+                if (cadeiras[i] && !cadeiraBloqueada) {
+                    cadeiras[i].classList.add("disponivel")
+                    cadeirasDisponiveis[i].classList.remove("ocupada")
+                }
+                var desabilitaCadeiras = cadeirasDisponiveis[i];
+                desabilitaCadeiras.classList.add("disabled");
+
+            }
         }
 
         if (e.target.classList.contains("unitSP-clicked") || (e.target.classList.contains("unitSantos-clicked") && !e.target.classList.contains("disabled"))) {
@@ -267,7 +277,7 @@ function clickSP() {
         } else {
             sp.classList.remove("unitSP-clicked")
             for (var i = 0; i < cadeirasDisponiveis.length; i++) {
-                if(cadeiras[i] && !cadeiraBloqueada){
+                if (cadeiras[i] && !cadeiraBloqueada) {
                     cadeiras[i].classList.add("disponivel")
                     cadeirasDisponiveis[i].classList.remove("ocupada")
                 }
