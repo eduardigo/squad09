@@ -4,34 +4,6 @@ const Unidade = require('../models/unidade');
 const Posto = require('../models/posto');
 const Agendamento = require('../models/agendamento');
 
-/* router.get('/:unidadeId', async (req, res) => {
-    try {
-        const { unidadeId } = req.params;
-        const { data } = req.body;
-        let postosOcupados = await Agendamento.find({
-            unidadeId,
-            data,
-        }).select('postoId');
-
-        console.log(postosOcupados);
-               
-
-        const postosDisponiveis = await Posto.find({
-                status: 'D',            
-            }).select('postoId');
-
-        console.log(postosDisponiveis);
-
-        //Como fazer postosDisponiveis - postosOcupados?
-        
-
-    } catch (err) {
-        res.json({ error: true, message: err.message});
-    }
-}) */
-
-
-
 //Rota para criar um agendamento
 router.post('/', async (req, res) => {
     try {
@@ -135,9 +107,8 @@ router.delete('/:id', async (req, res) => {
 
 module.exports = router;
 
-/* TESTE DE MOSTRAR POR DATA E POR UNIDADE
-
-router.get('/:unidadeId', async (req, res) => {
+/* teste buscar postos disponiveis por data e unidade
+  router.get('/:unidadeId', async (req, res) => {
     try {
         const { unidadeId } = req.params;
         const { data } = req.body;
@@ -147,20 +118,18 @@ router.get('/:unidadeId', async (req, res) => {
         }).select('postoId');
 
         console.log(postosOcupados);
+               
 
         const postosDisponiveis = await Posto.find({
-            _id: {
-                $ne: postosOcupados,
-            },
-            status: 'D',            
-        }).select('_id');
+                status: 'D',            
+            }).select('postoId');
+
         console.log(postosDisponiveis);
 
-        res.json({ 
-            postosDisponiveis: postosDisponiveis.map(s => ({ posto: s.postosDisponiveis })),
-        });
+        //Como fazer postosDisponiveis - postosOcupados?
+        
 
     } catch (err) {
         res.json({ error: true, message: err.message});
     }
-});*/
+}) */

@@ -33,6 +33,21 @@ router.put('/:id', async (req, res) => {
             cadeira: req.body.cadeira,
             status: req.body.status,
         };
+        await Posto.findByIdAndUpdate(req.params.id, posto);
+        res.json({ message: 'Atualizado'});
+        
+        
+    } catch (err) {
+        res.json({ error: true, message: err.message});
+    }
+});
+
+//Rota de atualização do status do posto
+router.patch('/:id', async (req, res) => {
+    try {
+        const posto = {
+            status: req.body.status,
+        };
 
         await Posto.findByIdAndUpdate(req.params.id, posto);
         
@@ -47,8 +62,8 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        await Posto.findByIdAndUpdate(id, { status: 'B'});
-        res.json({ message: 'Bloqueado'});    
+        await Posto.findByIdAndDelete(id);
+        res.json({ message: 'Posto deletado'});    
     } catch (err) {
         res.json({ error: true, message: err.message});
     }
