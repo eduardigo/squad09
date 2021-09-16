@@ -28,6 +28,8 @@ const cadeiraOcupada = document.querySelector(".ocupada");
 
 const calendario = document.querySelector(".data");
 
+const confirmarData = document.querySelector(".confirmarData");
+
 const confirmar = document.querySelector(".confirmar");
 
 const cancelar = document.querySelector(".cancelar");
@@ -55,6 +57,7 @@ santos.classList.add("disabled");
 calendario.classList.add("disabled");
 confirmar.classList.add("disabled");
 cancelar.classList.add("disabled");
+confirmarData.classList.add("disabled");
 
 
 
@@ -161,18 +164,20 @@ function clickSantos() {
 
         if (e.target.classList.contains("unitSP-clicked") || (e.target.classList.contains("unitSantos-clicked") && !e.target.classList.contains("disabled"))) {
             calendario.classList.remove("disabled");
+            confirmarData.classList.remove("disabled");
 
-            for (var i = 0; i < cadeirasDisponiveis.length; i++) {
-                var desabilitaCadeiras = cadeirasDisponiveis[i];
-                desabilitaCadeiras.classList.remove("disabled");
-            }
+            // for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+            //     var desabilitaCadeiras = cadeirasDisponiveis[i];
+            //     desabilitaCadeiras.classList.remove("disabled");
+            // }
 
         } else {
             calendario.classList.add("disabled");
-            for (var i = 0; i < cadeirasDisponiveis.length; i++) {
-                var desabilitaCadeiras = cadeirasDisponiveis[i];
-                desabilitaCadeiras.classList.add("disabled");
-            }
+            confirmarData.classList.add("disabled");
+            // for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+            //     var desabilitaCadeiras = cadeirasDisponiveis[i];
+            //     desabilitaCadeiras.classList.add("disabled");
+            // }
         }
 
         fetch(`http://localhost:3000/unidade/posto/${idSantos}`, {
@@ -200,31 +205,50 @@ function clickSantos() {
             // }
         });
 
-        fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
-            method: 'GET',
-        }).then(function (response) {
-            return response.json();
-        }).then(function (dados) {
-            if (calendario.value) {
-                for (var i = 0; i < cadeiras.length; i++) {
-                    if (!cadeiras[i].classList.contains("bloqueada")) {
-                        cadeiras[i].classList.add("disponivel");
-                        cadeiras[i].classList.remove("ocupada");
+        confirmarData.addEventListener("click", () => {
+
+
+
+            fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
+                method: 'GET',
+            }).then(function (response) {
+                return response.json();
+            }).then(function (dados) {
+
+                if (calendario.value == "") {
+                    for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+                        var desabilitaCadeiras = cadeirasDisponiveis[i];
+                        desabilitaCadeiras.classList.add("disabled");
                     }
                 }
-                for (var i = 0; i < dados.listarAgendamentos.length; i++) {
-                    if (dados.listarAgendamentos[i].unidade === idSantos) {
-                        idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
-                        for (var j = 0; j < cadeirasDisponiveis.length; j++) {
-                            if (cadeirasDisponiveis[j].getAttribute("id") == idLugarOcupado[i]) {
-                                cadeirasDisponiveis[j].classList.remove("disponivel");
-                                cadeirasDisponiveis[j].classList.add("ocupada");
-                                console.log("oi");
+
+                if (calendario.value) {
+
+                    for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+                        var desabilitaCadeiras = cadeirasDisponiveis[i];
+                        desabilitaCadeiras.classList.remove("disabled");
+                    }
+
+                    for (var i = 0; i < cadeiras.length; i++) {
+                        if (!cadeiras[i].classList.contains("bloqueada")) {
+                            cadeiras[i].classList.add("disponivel");
+                            cadeiras[i].classList.remove("ocupada");
+                        }
+                    }
+                    for (var i = 0; i < dados.listarAgendamentos.length; i++) {
+                        if (dados.listarAgendamentos[i].unidade === idSantos) {
+                            idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
+                            for (var j = 0; j < cadeirasDisponiveis.length; j++) {
+                                if (cadeirasDisponiveis[j].getAttribute("id") == idLugarOcupado[i]) {
+                                    cadeirasDisponiveis[j].classList.remove("disponivel");
+                                    cadeirasDisponiveis[j].classList.add("ocupada");
+                                    console.log("oi");
+                                }
                             }
                         }
                     }
                 }
-            }
+            })
         })
     }
     )
@@ -242,25 +266,37 @@ function clickSP() {
             e.target.classList.toggle("unitSP-clicked");
         } else {
             sp.classList.remove("unitSP-clicked")
+            for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+                if(cadeiras[i] && !cadeiraBloqueada){
+                    cadeiras[i].classList.add("disponivel")
+                    cadeirasDisponiveis[i].classList.remove("ocupada")
+                }
+                var desabilitaCadeiras = cadeirasDisponiveis[i];
+                desabilitaCadeiras.classList.add("disabled");
+
+            }
+
+
         }
 
         if (e.target.classList.contains("unitSP-clicked") || (e.target.classList.contains("unitSantos-clicked"))) {
             calendario.classList.remove("disabled");
-            calendario.classList.remove("disabled");
+            confirmarData.classList.remove("disabled");
 
-            for (var i = 0; i < cadeirasDisponiveis.length; i++) {
-                var desabilitaCadeiras = cadeirasDisponiveis[i];
-                desabilitaCadeiras.classList.remove("disabled");
-            }
+            // for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+            //     var desabilitaCadeiras = cadeirasDisponiveis[i];
+            //     desabilitaCadeiras.classList.remove("disabled");
+            // }
 
         } else {
             calendario.classList.add("disabled");
+            confirmarData.classList.add("disabled");
 
 
-            for (var i = 0; i < cadeirasDisponiveis.length; i++) {
-                var desabilitaCadeiras = cadeirasDisponiveis[i];
-                desabilitaCadeiras.classList.add("disabled");
-            }
+            // for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+            //     var desabilitaCadeiras = cadeirasDisponiveis[i];
+            //     desabilitaCadeiras.classList.add("disabled");
+            // }
 
         }
 
@@ -283,32 +319,53 @@ function clickSP() {
             }
         });
 
-        fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
-            method: 'GET',
-        }).then(function (response) {
-            return response.json();
-        }).then(function (dados) {
-            if (calendario.value) {
-                for (var i = 0; i < cadeiras.length; i++) {
-                    if (!cadeiras[i].classList.contains("bloqueada")) {
-                        cadeiras[i].classList.add("disponivel");
-                        cadeiras[i].classList.remove("ocupada");
+
+        confirmarData.addEventListener("click", () => {
+
+            fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
+                method: 'GET',
+            }).then(function (response) {
+                return response.json();
+            }).then(function (dados) {
+
+
+                if (calendario.value == "") {
+                    for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+                        var desabilitaCadeiras = cadeirasDisponiveis[i];
+                        desabilitaCadeiras.classList.add("disabled");
                     }
                 }
-                console.log("teste");
-                for (var i = 0; i < dados.listarAgendamentos.length; i++) {
-                    if (dados.listarAgendamentos[i].unidade === idSP) {
-                        idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
-                        for (var j = 0; j < cadeirasDisponiveis.length; j++) {
-                            if (cadeirasDisponiveis[j].getAttribute("id") == idLugarOcupado[i]) {
-                                cadeirasDisponiveis[j].classList.remove("disponivel");
-                                cadeirasDisponiveis[j].classList.add("ocupada");
-                                console.log("oi");
+
+                if (calendario.value) {
+
+                    for (var i = 0; i < cadeirasDisponiveis.length; i++) {
+                        var desabilitaCadeiras = cadeirasDisponiveis[i];
+                        desabilitaCadeiras.classList.remove("disabled");
+                    }
+
+
+                    for (var i = 0; i < cadeiras.length; i++) {
+                        if (!cadeiras[i].classList.contains("bloqueada")) {
+                            cadeiras[i].classList.add("disponivel");
+                            cadeiras[i].classList.remove("ocupada");
+                        }
+                    }
+                    console.log("teste");
+                    console.log(dados);
+                    for (var i = 0; i < dados.listarAgendamentos.length; i++) {
+                        if (dados.listarAgendamentos[i].unidade === idSP) {
+                            idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
+                            for (var j = 0; j < cadeirasDisponiveis.length; j++) {
+                                if (cadeirasDisponiveis[j].getAttribute("id") == idLugarOcupado[i]) {
+                                    cadeirasDisponiveis[j].classList.remove("disponivel");
+                                    cadeirasDisponiveis[j].classList.add("ocupada");
+                                    console.log("oi");
+                                }
                             }
                         }
                     }
                 }
-            }
+            })
         })
     })
 }

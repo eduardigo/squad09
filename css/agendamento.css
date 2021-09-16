@@ -211,6 +211,35 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.confirmarData {
+    transition: 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    width: 200px;
+    height: 49px;
+    text-align: center;
+    margin: 12% 10% 10% 3%;
+    padding: 14px, 16px, 13px, 16px;
+    border: 0.2vh solid black;
+    border-radius: 0.7rem;
+    font-size: 2.4vh;
+    background-color: var(--cor11);
+}
+
+
+.confirmarData:hover {
+    cursor: pointer;
+    background-color: #404099;
+    color: white;
+}
+
+.confirmarData:active {
+transform: scale(0.9);
+
+}
+
+
+
+
 .title2 {
     padding-top: 5vh;
 }
@@ -369,7 +398,7 @@ h5 {
     opacity: 0.3;
 }
 
-@media (max-width: 600px;){
+@media (max-width: 600px){
     .container{
         width: 70%;
     }
