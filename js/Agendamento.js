@@ -18,6 +18,8 @@ const cadDiv = document.querySelector(".cad-flex")
 
 const cadeiras = document.querySelectorAll(".cadeira");
 
+const cadeiraBloqueada = document.querySelector(".bloqueada");
+
 const cadeiraDisponivel = document.querySelector(".disponivel");
 
 const cadeirasDisponiveis = document.querySelectorAll(".disponivel");
@@ -40,6 +42,11 @@ var cadeiraSantos = [];
 var dataSantos = [];
 var valueSantos = [];
 
+
+var mesaSP = [];
+var cadeiraSP = [];
+var dataSP = [];
+var valueSP = [];
 
 
 //desabilitando botoes
@@ -68,8 +75,8 @@ for (var i = 0; i < cadeirasDisponiveis.length; i++) {
 abreSite();
 clickAgendar();
 clickVerAgendamentos();
-clickSP();
 clickSantos();
+clickSP();
 selecionaCadeira();
 clickConfirmar();
 clickCancelar();
@@ -81,8 +88,8 @@ function clickAgendar() {
     agendar.addEventListener("click", (e) => {
 
 
-        // console.log(idSP);
-        // console.log(idSantos);
+        console.log(idSP);
+        console.log(idSantos);
 
 
         if (e.target.classList.contains("agendar") && !e.target.classList.contains("agendar-clicked")) {
@@ -154,7 +161,6 @@ function clickSantos() {
 
         if (e.target.classList.contains("unitSP-clicked") || (e.target.classList.contains("unitSantos-clicked") && !e.target.classList.contains("disabled"))) {
             calendario.classList.remove("disabled");
-            calendario.classList.remove("disabled");
 
             for (var i = 0; i < cadeirasDisponiveis.length; i++) {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
@@ -163,8 +169,6 @@ function clickSantos() {
 
         } else {
             calendario.classList.add("disabled");
-            calendario.classList.add("disabled");
-
             for (var i = 0; i < cadeirasDisponiveis.length; i++) {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
                 desabilitaCadeiras.classList.add("disabled");
@@ -175,15 +179,15 @@ function clickSantos() {
             method: 'GET',
         }).then(function (response) {
             return response.json();
-        }).then(function (retorno) {
-            for (var i = 0; i < retorno.posto.length; i++) {
+        }).then(function (retornoSantos) {
+            for (var i = 0; i < retornoSantos.posto.length; i++) {
 
-                mesaSantos[i] = retorno.posto[i].mesa;
-                cadeiraSantos[i] = retorno.posto[i].cadeira;
-                idLugarDisponivel[i] = retorno.posto[i].value;
+                mesaSantos[i] = retornoSantos.posto[i].mesa;
+                cadeiraSantos[i] = retornoSantos.posto[i].cadeira;
+                idLugarDisponivel[i] = retornoSantos.posto[i].value;
 
-                cadeirasDisponiveis[i].setAttribute("id", retorno.posto[i].value);
-                console.log(cadeirasDisponiveis[i]);
+                cadeirasDisponiveis[i].setAttribute("id", retornoSantos.posto[i].value);
+                // console.log(cadeirasDisponiveis[i]);
                 // console.log("mesa: " + mesaSantos[i]);
                 // console.log("cadeira: " + cadeiraSantos[i]);
                 // console.log("value: " + idLugarDisponivel[i]);
@@ -202,22 +206,17 @@ function clickSantos() {
             return response.json();
         }).then(function (dados) {
             if (calendario.value) {
-                for (var i = 0; i<cadeiras.length; i++){
-                    cadeiras[i].classList.add("disponivel");
-                    cadeiras[i].classList.remove("ocupada");
+                for (var i = 0; i < cadeiras.length; i++) {
+                    if (!cadeiras[i].classList.contains("bloqueada")) {
+                        cadeiras[i].classList.add("disponivel");
+                        cadeiras[i].classList.remove("ocupada");
+                    }
                 }
                 for (var i = 0; i < dados.listarAgendamentos.length; i++) {
                     if (dados.listarAgendamentos[i].unidade === idSantos) {
-                        // dataSantos[i] = dados.listarAgendamentos[i].data;
-                        // console.log(dados);
                         idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
-                        // console.log(dados.listarAgendamentos.length);
-                        // console.log(dataSantos[i]);
-                        // console.log(idLugarOcupado[i]);
-
-
                         for (var j = 0; j < cadeirasDisponiveis.length; j++) {
-                            if (cadeirasDisponiveis[i].getAttribute("id") == idLugarOcupado[j]) {
+                            if (cadeirasDisponiveis[j].getAttribute("id") == idLugarOcupado[i]) {
                                 cadeirasDisponiveis[j].classList.remove("disponivel");
                                 cadeirasDisponiveis[j].classList.add("ocupada");
                                 console.log("oi");
@@ -237,7 +236,7 @@ function clickSantos() {
 
 
 function clickSP() {
-    unid.addEventListener("click", (e) => {
+    sp.addEventListener("click", (e) => {
         if (e.target.classList.contains("unitSP") && !e.target.classList.contains("unitSP-clicked")) {
             santos.classList.remove("unitSantos-clicked");
             e.target.classList.toggle("unitSP-clicked");
@@ -256,7 +255,7 @@ function clickSP() {
 
         } else {
             calendario.classList.add("disabled");
-            calendario.classList.add("disabled");
+
 
             for (var i = 0; i < cadeirasDisponiveis.length; i++) {
                 var desabilitaCadeiras = cadeirasDisponiveis[i];
@@ -265,7 +264,54 @@ function clickSP() {
 
         }
 
-    });
+
+        fetch(`http://localhost:3000/unidade/posto/${idSP}`, {
+            method: 'GET',
+        }).then(function (response) {
+            return response.json();
+        }).then(function (retornoSP) {
+            for (var i = 0; i < retornoSP.posto.length; i++) {
+
+                console.log(retornoSP.posto[i].mesa);
+
+                mesaSP[i] = retornoSP.posto[i].mesa;
+                cadeiraSP[i] = retornoSP.posto[i].cadeira;
+                idLugarDisponivel[i] = retornoSP.posto[i].value;
+                console.log(idLugarDisponivel[i]);
+
+                cadeirasDisponiveis[i].setAttribute("id", retornoSP.posto[i].value);
+            }
+        });
+
+        fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
+            method: 'GET',
+        }).then(function (response) {
+            return response.json();
+        }).then(function (dados) {
+            if (calendario.value) {
+                for (var i = 0; i < cadeiras.length; i++) {
+                    if (!cadeiras[i].classList.contains("bloqueada")) {
+                        cadeiras[i].classList.add("disponivel");
+                        cadeiras[i].classList.remove("ocupada");
+                    }
+                }
+                console.log("teste");
+                console.log(idSP);
+                for (var i = 0; i < dados.listarAgendamentos.length; i++) {
+                    if (dados.listarAgendamentos[i].unidade === idSP) {
+                        idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
+                        for (var j = 0; j < cadeirasDisponiveis.length; j++) {
+                            if (cadeirasDisponiveis[j].getAttribute("id") == idLugarOcupado[i]) {
+                                cadeirasDisponiveis[j].classList.remove("disponivel");
+                                cadeirasDisponiveis[j].classList.add("ocupada");
+                                console.log("oi");
+                            }
+                        }
+                    }
+                }
+            }
+        })
+    })
 }
 
 
@@ -306,9 +352,7 @@ function clickConfirmar() {
 function clickCancelar() {
     cancelar.addEventListener("click", (e) => {
         const cadeiraSelecionada = document.querySelector(".selecionada");
-        if (cadeiraSelecionada) {
-            cadeiraSelecionada.classList.remove("selecionada");
-        }
+        cadeiraSelecionada.classList.remove("selecionada");
 
 
     });
