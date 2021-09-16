@@ -3,6 +3,8 @@ const email = document.querySelector('.email-input');
 const password = document.querySelector('.password-input');
 const resetPassword = document.querySelector('.login-reset');
 
+var userID = "";
+
 
 // ação disparada ao apertar o botão de login 
 loginForm.addEventListener('submit', function (e) {
@@ -31,10 +33,14 @@ loginForm.addEventListener('submit', function (e) {
     }).then(function (data) {
         // passando o token do usuário para a sessionStorage (para uma possível funcionalidade futura)
         // sessionStorage = guarda na memória até fechar o navegador. localStorage
+        // console.log(data);
+        sessionStorage.setItem("userID", data.user._id)
+        userID = sessionStorage.getItem("userID");
+        console.log(userID);
         sessionStorage.setItem("token", data.token)
         console.log(JSON.stringify(data.token));
         // troca de pagina
-        window.location.href = "dashboard.html";
+        // window.location.href = "dashboard.html";
 
 
     }).catch(function (error) {
