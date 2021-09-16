@@ -1,6 +1,7 @@
 const loginForm = document.querySelector('#formLogar');
 const email = document.querySelector('.email-input');
 const password = document.querySelector('.password-input');
+const resetPassword = document.querySelector('.login-reset');
 
 
 // ação disparada ao apertar o botão de login 
@@ -43,4 +44,11 @@ loginForm.addEventListener('submit', function (e) {
 
 
 
+loginForm.addEventListener('submit', function (e) {
 
+    e.preventDefault();
+
+
+    
+
+});
