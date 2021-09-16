@@ -40,11 +40,11 @@ router.get('/posto/:unidadeId', async (req, res) => {
         const posto = await Posto.find({
             unidadeId,
             status: 'D'
-        }).select('_id mesa cadeira');
+        }).select('_id mesa cadeira status');
 
         // Retornar neste formato: [{ mesa: 'mesa', cadeira: 'cadeira', value: '_id'}]
         res.json({
-            posto: posto.map(s => ({ mesa: s.mesa, cadeira: s.cadeira, value: s._id })),
+            posto: posto.map(s => ({ mesa: s.mesa, cadeira: s.cadeira, status: s.status, value: s._id })),
         });
 
     } catch (err) {

@@ -44,11 +44,11 @@ router.post('/autenticacao', async (req, res) => {
     const user = await User.findOne({ email }).select('+password');
 
     if (!user)
-        return res.status(404).send({ error: 'Usuário não encontrado' });
+        return res.status(400).send({ error: 'Usuário não encontrado' });
 
     //Comparar se a senha inserida é diferente da cadastrada no banco
     if (!await bcrypt.compare(password, user.password))
-        return res.status(401).send({ error: 'Senha inválida' });
+        return res.status(400).send({ error: 'Senha inválida' });
 
 
     user.password = undefined;
@@ -87,8 +87,8 @@ router.post('/esqueceu_senha', async (req, res) => {
         transport.sendMail({
             from: "Squad09 <squad09hackathon@outlook.com>",
             to: email,
-            subject: "Siga os passos abaixo para redefinir sua senha",
-            text: "TEXTO A SER ELABORADO" + token,
+            subject: "Siga os passos abaixo para redefinir sua senha do sistema de agendamento FCalendar",
+            text: "Percebemos que você esqueceu sua senha de acesso do sistema FCalendar para agendar sua ida aos escritórios da FCamara, fique tranquilo! \nBasta copiar o código abaixo para redefinir sua senha \n" + token,
             context: { token },
         }, (err) => {
             console.log(err);
