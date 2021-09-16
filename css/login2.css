@@ -83,7 +83,7 @@ p{
 
 .email-input, .password-input{
     height: 5vh;
-    width: 42vh;
+    width: 45vh;
     border-radius: 1vh;
     box-sizing: border-box;
     padding-left: 1vh;
@@ -125,6 +125,13 @@ p{
     .login-container{
         width: 70%;
     }    
+    .email-input, .password-input, .login-submit, .create-submit{
+        align-items: center;
+        width: 70%;
+    }
+    #formLogar{
+        padding-left:6vh;
+    }
 }
     
 
