@@ -81,7 +81,7 @@
 
 - [ ✔️ ] Cadastro de usuário
 - [ ✔️ ] Login de usuário
-- [-----] Agendamento do usuário
+- [ ✔️ ] Agendamento do usuário
 - [-----] Checagem de agendamentos
 
 
@@ -136,12 +136,12 @@ $ node index.js
 # Participantes
 <table>
   <tr>
-    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Alisson de Sousa</b></sub></a><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
+    <td align="center"><a href="https://github.com/alissoncorsair"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Alisson de Sousa</b></sub></a><a href="https://github.com/alissoncorsair"></a></td>
     <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Eduardo Braga</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Janice Martins</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a>  <a href="https://www.linkedin.com/in/eduardo-braga"></a></td> 
-    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Mariane Bardella</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Samille Soares</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
-    <td align="center"><a href="https://www.linkedin.com/in/eduardo-braga"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Simone Paiva</b></sub></a><br /><a href="https://www.linkedin.com/in/eduardo-braga"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/janicegomesm"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Janice Martins</b></sub></a><br /><a href="https://www.linkedin.com/in/janicegomesm"></a>
+    <td align="center"><a href="https://www.linkedin.com/in/mariane-bardella-de-castro-953370109/"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Mariane Bardella</b></sub></a><br /><a href="https://www.linkedin.com/in/mariane-bardella-de-castro-953370109/"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/samilledois/"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Samille Soares</b></sub></a><br /><a href="https://www.linkedin.com/in/samilledois/"></a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/simone-paiva-b6114245?originalSubdomain=br"><img style="border-radius: 50%;" src="https://i.pinimg.com/originals/31/92/c5/3192c5a13626653bffeb2c1171df716f.png" width="100px;" alt=""/><br /><sub><b>Simone Paiva</b></sub></a><br /><a href="https://www.linkedin.com/in/simone-paiva-b6114245?originalSubdomain=br"></a></td>
 
   </tr>
 </table>
