@@ -36,6 +36,10 @@ const confirmar = document.querySelector(".confirmar");
 
 const cancelar = document.querySelector(".cancelar");
 
+var estacaoSantos = document.querySelector(".estacaoSantos");
+var estacaoSP = document.querySelector(".estacaoSP");
+
+
 var idSP = "";
 var idSantos = "";
 var idUnidadeAtual = "";
@@ -52,6 +56,8 @@ var mesaSP = [];
 var cadeiraSP = [];
 var dataSP = [];
 var valueSP = [];
+
+
 
 
 
@@ -94,12 +100,13 @@ clickCancelar();
 
 
 
+
 function clickAgendar() {
     agendar.addEventListener("click", (e) => {
 
 
-        console.log(idSP);
-        console.log(idSantos);
+        // console.log(idSP);
+        // console.log(idSantos);
 
 
         if (e.target.classList.contains("agendar") && !e.target.classList.contains("agendar-clicked")) {
@@ -157,7 +164,6 @@ function clickVerAgendamentos() {
 
 
         fetch(`http://localhost:3000/agendamento/${userID}`, {
-
             method: 'get',
         }).then(function (response) {
 
@@ -169,11 +175,8 @@ function clickVerAgendamentos() {
                 console.log(JSON.stringify(dados.listarAgendamentos[i].posto));
                 console.log(JSON.stringify(dados.listarAgendamentos[i].data));
                 console.log(JSON.stringify(dados.listarAgendamentos[i].value));
-                console.log("-------------");
-            }   
+            }
         })
-
-
 
     });
 }
@@ -181,7 +184,15 @@ function clickVerAgendamentos() {
 
 
 function clickSantos() {
+
     santos.addEventListener("click", (e) => {
+
+
+            estacaoSantos.hidden = false;
+            estacaoSP.hidden = true;
+
+
+        idUnidadeAtual = idSantos;
         if (e.target.classList.contains("unitSantos") && !e.target.classList.contains("unitSantos-clicked") && !e.target.classList.contains("disabled")) {
             sp.classList.remove("unitSP-clicked");
             e.target.classList.toggle("unitSantos-clicked");
@@ -230,21 +241,11 @@ function clickSantos() {
                 idLugarDisponivel[i] = retornoSantos.posto[i].value;
 
                 cadeirasDisponiveis[i].setAttribute("id", retornoSantos.posto[i].value);
-                // console.log(cadeirasDisponiveis[i]);
-                // console.log("mesa: " + mesaSantos[i]);
-                // console.log("cadeira: " + cadeiraSantos[i]);
-                // console.log("value: " + idLugarDisponivel[i]);
+
             }
-            // for (var j = 0; j < cadeirasDisponiveis.length; j++) {
-            //     if (!cadeirasDisponiveis[j].getAttribute("id")) {
-            //         cadeirasDisponiveis[j].classList.remove("disponivel");
-            //         cadeirasDisponiveis[j].classList.add("ocupada");
-            //     }
-            // }
         });
 
-        confirmarData.addEventListener("click", () => {
-
+        confirmarData.addEventListener("click", e => {
 
 
             fetch(`http://localhost:3000/agendamento/dia-exato/${calendario.value}`, {
@@ -274,13 +275,13 @@ function clickSantos() {
                         }
                     }
                     for (var i = 0; i < dados.listarAgendamentos.length; i++) {
-                        if (dados.listarAgendamentos[i].unidade === idSantos) {
-                            idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
+                        if (dados.listarAgendamentos[i].unidade == idSantos) {
+                            // idLugarOcupado[i] = dados.listarAgendamentos[i].posto;
                             for (var j = 0; j < cadeirasDisponiveis.length; j++) {
-                                if (cadeirasDisponiveis[j].getAttribute("id") == idLugarOcupado[i]) {
-                                    cadeirasDisponiveis[j].classList.remove("disponivel");
+                                if (cadeirasDisponiveis[j].getAttribute("id") == dados.listarAgendamentos[i].posto) {
                                     cadeirasDisponiveis[j].classList.add("ocupada");
-                                    console.log("oi");
+                                    cadeirasDisponiveis[j].classList.remove("disponivel");
+
                                 }
                             }
                         }
@@ -299,6 +300,12 @@ function clickSantos() {
 
 function clickSP() {
     sp.addEventListener("click", (e) => {
+
+
+        estacaoSP.hidden = false;
+        estacaoSantos.hidden = true;
+
+        idUnidadeAtual = idSP;
         if (e.target.classList.contains("unitSP") && !e.target.classList.contains("unitSP-clicked")) {
             santos.classList.remove("unitSantos-clicked");
             e.target.classList.toggle("unitSP-clicked");
@@ -321,20 +328,9 @@ function clickSP() {
             calendario.classList.remove("disabled");
             confirmarData.classList.remove("disabled");
 
-            // for (var i = 0; i < cadeirasDisponiveis.length; i++) {
-            //     var desabilitaCadeiras = cadeirasDisponiveis[i];
-            //     desabilitaCadeiras.classList.remove("disabled");
-            // }
-
         } else {
             calendario.classList.add("disabled");
             confirmarData.classList.add("disabled");
-
-
-            // for (var i = 0; i < cadeirasDisponiveis.length; i++) {
-            //     var desabilitaCadeiras = cadeirasDisponiveis[i];
-            //     desabilitaCadeiras.classList.add("disabled");
-            // }
 
         }
 
@@ -409,6 +405,7 @@ function clickSP() {
 }
 
 
+
 function selecionaCadeira() {
     cadDiv.addEventListener("click", (e) => {
 
@@ -439,19 +436,22 @@ function clickConfirmar() {
 
         // var recebeID = cadeiraSelecionada.getAttribute("id", "selecionada");
 
-        idUnidadeAtual = cadeiraSelecionada.id;
-
-        const dadosAgendar = { userID, idUnidadeAtual, cadeiraSelecionada: cadeiraSelecionada.id, calendario: calendario.value }
-
         fetch('http://localhost:3000/agendamento', {
             method: 'post',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userID, idUnidadeAtual, cadeiraSelecionada: cadeiraSelecionada.id, calendario: calendario.value })
+            body: JSON.stringify({ usuarioId: userID, unidadeId: idUnidadeAtual, postoId: cadeiraSelecionada.id, data: calendario.value })
         }).then(function (response) {
             // console.log(JSON.stringify(dadosAgendar));
             return response.json();
         }).then(function (dados) {
             console.log(dados);
+            cadeiraSelecionada = document.querySelector(".selecionada");
+            cadeiraSelecionada.classList.add("ocupada");
+            cadeiraSelecionada.classList.remove("disponivel");
+            for (var i = 0; i < cadeiras.length; i++) {
+                cadeiras[i].classList.add("disabled");
+            }
+
             // window.location.href = "dashboard.html";
         }).catch(function (error) {
             console.log(error);
@@ -470,9 +470,6 @@ function clickCancelar() {
     });
 
 }
-
-
-
 
 function abreSite() {
 

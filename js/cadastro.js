@@ -24,7 +24,7 @@ cadastroForm.addEventListener('submit', function (e) {
         // }).then(function (data) {
         //     sessionStorage.setItem("token", data.token);
         }).then(function (){
-            window.location.href = "dashboard.html";
+            window.location.href = "protocolo.html";
             }).catch(function (error) {
                 console.log(error);
             })

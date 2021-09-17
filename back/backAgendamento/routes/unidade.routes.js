@@ -53,5 +53,25 @@ router.get('/posto/:unidadeId', async (req, res) => {
 });
 
 
+router.get('/posto/:unidadeId/:mesa', async (req, res) => {
+    try {
+        const { mesa } = req.params;
+        const { unidadeId } = req.params;
+        const posto = await Posto.find({
+            unidadeId,
+            mesa,
+            status: 'D'
+        }).select('_id mesa cadeira status');
+
+        // Retornar neste formato: [{ mesa: 'mesa', cadeira: 'cadeira', value: '_id'}]
+        res.json({
+            posto: posto.map(s => ({ mesa: s.mesa, cadeira: s.cadeira, status: s.status, value: s._id })),
+        });
+
+    } catch (err) {
+        res.json({ error: true, message: err.message});
+    }
+});
+
 
 module.exports = router;

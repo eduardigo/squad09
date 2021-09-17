@@ -241,6 +241,7 @@
 }
 
 .submit:hover{
+    cursor: pointer;
     background-color: var(--cor11);
     color: var(--cor8);
 }

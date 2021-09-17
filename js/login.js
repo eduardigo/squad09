@@ -39,7 +39,7 @@ loginForm.addEventListener('submit', function (e) {
         sessionStorage.setItem("token", data.token)
         console.log(JSON.stringify(data.token));
         // troca de pagina
-        window.location.href = "agendamento.html";
+        window.location.href = "protocolo.html";
 
 
     }).catch(function (error) {
